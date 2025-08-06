@@ -5,12 +5,7 @@ import {
   CodeBracketIcon,
   ArrowUpIcon,
 } from "@heroicons/react/24/outline";
-import {
-  GithubIcon,
-  LinkedinIcon,
-  TwitterIcon,
-  InstagramIcon,
-} from "lucide-react";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -26,24 +21,14 @@ const Footer = () => {
 
   const socialLinks = [
     {
-      icon: GithubIcon,
-      href: "https://github.com/tanyaradzwatm",
+      icon: FaGithub,
+      href: "https://github.com/TanyaMushonga/",
       label: "GitHub",
     },
     {
-      icon: LinkedinIcon,
-      href: "https://linkedin.com/in/tanyaradzwa-mushonga",
+      icon: FaLinkedin,
+      href: "https://www.linkedin.com/in/tanyaradzwa-t-mushonga-b23745209/",
       label: "LinkedIn",
-    },
-    {
-      icon: TwitterIcon,
-      href: "https://twitter.com/tanyaradzwa_tm",
-      label: "Twitter",
-    },
-    {
-      icon: InstagramIcon,
-      href: "https://instagram.com/tanyaradzwa.tm",
-      label: "Instagram",
     },
   ];
 
@@ -53,16 +38,13 @@ const Footer = () => {
 
   return (
     <footer className="relative bg-dark-900 border-t border-white/10">
-      {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0 bg-gradient-to-br from-primary-500/10 to-accent-400/10" />
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Main Footer Content */}
         <div className="py-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-            {/* Brand Section */}
             <div className="lg:col-span-2">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -76,9 +58,9 @@ const Footer = () => {
                   </div>
                   <div>
                     <h3 className="text-2xl font-bold gradient-text">
-                      Tanyaradzwa Mushonga
+                      Tanyaradzwa T Mushonga
                     </h3>
-                    <p className="text-gray-400">Full Stack Developer</p>
+                    <p className="text-gray-400">Software Engineer</p>
                   </div>
                 </div>
 
@@ -88,7 +70,6 @@ const Footer = () => {
                   clients globally.
                 </p>
 
-                {/* Social Links */}
                 <div className="flex items-center space-x-4">
                   {socialLinks.map((social, index) => (
                     <motion.a
@@ -108,7 +89,6 @@ const Footer = () => {
               </motion.div>
             </div>
 
-            {/* Quick Links */}
             <div>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -148,9 +128,9 @@ const Footer = () => {
                   Get In Touch
                 </h4>
                 <div className="space-y-3 text-gray-400">
-                  <p>📧 hello@tanyaradzwatmushonga.me</p>
-                  <p>📱 +263 77 123 4567</p>
-                  <p>📍 Harare, Zimbabwe</p>
+                  <p>hello@tanyaradzwatmushonga.me</p>
+                  <p>+263 77 123 4567</p>
+                  <p>Harare, Zimbabwe</p>
                   <div className="mt-4 p-3 bg-green-500/10 border border-green-500/20 rounded-lg">
                     <div className="flex items-center text-green-400 text-sm">
                       <div className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse" />
@@ -163,7 +143,6 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Bottom Footer */}
         <div className="py-8 border-t border-white/10">
           <div className="flex flex-col md:flex-row items-center justify-between">
             <motion.div
