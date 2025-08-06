@@ -37,17 +37,6 @@ const Awards = () => {
     return icons[type] || TrophyIcon;
   };
 
-  interface GradientMap {
-    competition: string;
-    recognition: string;
-    academic: string;
-    innovation: string;
-    certification: string;
-    achievement: string;
-  }
-
-
-
   return (
     <section id="awards" className="py-20 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -69,7 +58,7 @@ const Awards = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {awards.map((award, index) => {
             const IconComponent = getIcon(award.type as AwardType);
-                    return (
+            return (
               <motion.div
                 key={award.id}
                 initial={{ opacity: 0, y: 50 }}
