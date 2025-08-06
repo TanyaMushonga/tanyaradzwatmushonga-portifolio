@@ -301,7 +301,7 @@ export const projects = [
     ],
   },
   {
-    id: 3,
+    id: 4,
     title: "ZimTickets Event Platform",
     description:
       "A comprehensive event discovery and ticketing platform serving venues and event organizers across Zimbabwe, enabling seamless ticket purchasing and event management.",
@@ -408,7 +408,7 @@ export const projects = [
     ],
   },
   {
-    id: 4,
+    id: 5,
     title: "TTL Business Diagnostic",
     description:
       "A comprehensive task and project management platform for business consultants, featuring advanced reporting, team collaboration, and client progress tracking.",
