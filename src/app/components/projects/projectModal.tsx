@@ -13,11 +13,10 @@ import {
   DocumentTextIcon,
   LightBulbIcon,
   WrenchIcon,
-  ArrowTrendingUpIcon,
   StarIcon,
   CalendarIcon,
 } from "@heroicons/react/24/outline";
-import Image from "next/image";
+
 import { Project } from "./types";
 
 interface ProjectModalProps {
@@ -185,52 +184,53 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    {project.lessonsLearned && project.lessonsLearned.length > 0 && (
-                      <div className="glass-effect p-6 rounded-lg border border-white/10">
-                        <h3 className="text-xl font-bold text-white mb-4 flex items-center">
-                          <LightBulbIcon className="w-5 h-5 text-white mr-2" />
-                          Lessons Learned
-                        </h3>
-                        <ul className="space-y-3">
-                          {project.lessonsLearned.map((lesson, index) => (
-                            <li
-                              key={index}
-                              className="flex items-start text-gray-300"
-                            >
-                              <span className="inline-block w-1.5 h-1.5 rounded-full bg-yellow-400 mt-2 mr-2 flex-shrink-0"></span>
-                              <span>{lesson}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
-
-                    {project.futureImprovements && project.futureImprovements.length > 0 && (
-                      <div className="glass-effect p-6 rounded-lg border border-white/10">
-                        <h3 className="text-xl font-bold text-white mb-4 flex items-center">
-                          <WrenchIcon className="w-5 h-5 mr-2" />
-                          Future Improvements
-                        </h3>
-                        <ul className="space-y-3">
-                          {project.futureImprovements.map(
-                            (improvement, index) => (
+                    {project.lessonsLearned &&
+                      project.lessonsLearned.length > 0 && (
+                        <div className="glass-effect p-6 rounded-lg border border-white/10">
+                          <h3 className="text-xl font-bold text-white mb-4 flex items-center">
+                            <LightBulbIcon className="w-5 h-5 text-white mr-2" />
+                            Lessons Learned
+                          </h3>
+                          <ul className="space-y-3">
+                            {project.lessonsLearned.map((lesson, index) => (
                               <li
                                 key={index}
                                 className="flex items-start text-gray-300"
                               >
                                 <span className="inline-block w-1.5 h-1.5 rounded-full bg-yellow-400 mt-2 mr-2 flex-shrink-0"></span>
-                                <span>{improvement}</span>
+                                <span>{lesson}</span>
                               </li>
-                            )
-                          )}
-                        </ul>
-                      </div>
-                    )}
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+
+                    {project.futureImprovements &&
+                      project.futureImprovements.length > 0 && (
+                        <div className="glass-effect p-6 rounded-lg border border-white/10">
+                          <h3 className="text-xl font-bold text-white mb-4 flex items-center">
+                            <WrenchIcon className="w-5 h-5 mr-2" />
+                            Future Improvements
+                          </h3>
+                          <ul className="space-y-3">
+                            {project.futureImprovements.map(
+                              (improvement, index) => (
+                                <li
+                                  key={index}
+                                  className="flex items-start text-gray-300"
+                                >
+                                  <span className="inline-block w-1.5 h-1.5 rounded-full bg-yellow-400 mt-2 mr-2 flex-shrink-0"></span>
+                                  <span>{improvement}</span>
+                                </li>
+                              )
+                            )}
+                          </ul>
+                        </div>
+                      )}
                   </div>
                 </div>
- 
+
                 <div className="lg:col-span-1 space-y-6">
- 
                   <div className="glass-effect p-6 rounded-lg border border-white/10">
                     <h3 className="text-xl font-bold text-white mb-4 flex items-center">
                       <ChartBarIcon className="w-5 h-5 text-primary-400 mr-2" />
@@ -252,7 +252,7 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
                       ))}
                     </div>
                   </div>
- 
+
                   <div className="glass-effect p-6 rounded-lg border border-white/10">
                     <h3 className="text-xl font-bold text-white mb-4 flex items-center">
                       <DocumentTextIcon className="w-5 h-5 text-accent-400 mr-2" />
@@ -270,7 +270,6 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
                     </div>
                   </div>
 
-               
                   <div className="glass-effect p-6 rounded-lg border border-white/10">
                     <h3 className="text-xl font-bold text-white mb-4 flex items-center">
                       <CalendarIcon className="w-5 h-5 text-yellow-400 mr-2" />
@@ -306,7 +305,7 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
                       )}
                     </div>
                   </div>
- 
+
                   {project.tags?.length > 0 && (
                     <div className="glass-effect p-6 rounded-lg border border-white/10">
                       <h3 className="text-xl font-bold text-white mb-4">
@@ -331,7 +330,6 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
                     </div>
                   )}
 
-              
                   <div className="space-y-3">
                     {project.liveUrl && (
                       <motion.button
