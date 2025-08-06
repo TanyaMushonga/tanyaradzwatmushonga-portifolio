@@ -12,6 +12,7 @@ import {
   CalendarIcon,
 } from "@heroicons/react/24/outline";
 import { certifications } from "./data";
+import Image from "next/image";
 
 const Certifications = () => {
   interface CategoryIcons {
@@ -129,7 +130,9 @@ const Certifications = () => {
                   {/* Organization Logo/Badge */}
                   <div className="flex items-center mb-2">
                     {cert.logo && (
-                      <img
+                      <Image
+                        width={30}
+                        height={30}
                         src={cert.logo}
                         alt={cert.organization}
                         className="w-8 h-8 rounded bg-white/10 backdrop-blur-sm mr-3"
