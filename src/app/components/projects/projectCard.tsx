@@ -45,24 +45,6 @@ const ProjectCard = ({ project, index, onSelect }: ProjectCardProps) => {
           </span>
         </div>
 
-        <div className="absolute top-4 right-4">
-          <span
-            className={`px-2 py-1 rounded-full text-xs font-medium backdrop-blur-sm ${
-              project.status === "completed"
-                ? "bg-accent-500/20 text-accent-400 border border-accent-500/30"
-                : project.status === "in-progress"
-                ? "bg-yellow-500/20 text-yellow-400 border border-yellow-500/30"
-                : "bg-gray-500/20 text-gray-400 border border-gray-500/30"
-            }`}
-          >
-            {project.status === "completed"
-              ? "Completed"
-              : project.status === "in-progress"
-              ? "In Progress"
-              : "Planned"}
-          </span>
-        </div>
-
         <div className="absolute bottom-4 right-4 flex items-center space-x-2">
           <div className="bg-dark-900/60 backdrop-blur-sm px-2 py-1 rounded-lg text-xs text-accent-400 flex items-center">
             <ChartBarIcon className="w-3 h-3 mr-1" />
@@ -70,7 +52,6 @@ const ProjectCard = ({ project, index, onSelect }: ProjectCardProps) => {
           </div>
         </div>
 
-        {/* Quick Action Overlay */}
         <div className="absolute inset-0 bg-dark-900/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center space-x-4">
           {project?.liveUrl && (
             <motion.button
