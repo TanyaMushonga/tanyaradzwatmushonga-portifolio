@@ -10,7 +10,7 @@ import {
 const Experience = () => {
   const experiences = [
     {
-      id: 2,
+      id: 1,
       title: "Full Stack Developer",
       company: "The Transfomation Legacy",
       location: "Remote",
