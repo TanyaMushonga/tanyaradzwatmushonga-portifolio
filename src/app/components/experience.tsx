@@ -54,14 +54,20 @@ const Experience = () => {
         "Collaborated on Safizen a mobile application that is used by people who offer cleaning services to find clients who uses Safi.",
         "Collaborated on ZimTicket a mobile app that is used for accessing a range of events in Zimbabwe from different event orginizers. The app facilitates the buying of tickets for events.",
       ],
-      technologies: ["React", "Node.js", "AWS", "PostgreSQL", "Django REST", "Docker"],
+      technologies: [
+        "React",
+        "Node.js",
+        "AWS",
+        "PostgreSQL",
+        "Django REST",
+        "Docker",
+      ],
     },
   ];
 
   return (
-    <section id="experience" className="py-20 relative">
+    <section id="experience" className="py-20 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -77,12 +83,9 @@ const Experience = () => {
           </p>
         </motion.div>
 
-        {/* Timeline */}
         <div className="relative">
-          {/* Timeline Line */}
           <div className="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 w-0.5 h-full bg-gradient-to-b from-primary-500 to-accent-400" />
 
-          {/* Experience Items */}
           <div className="space-y-12">
             {experiences.map((exp, index) => (
               <motion.div
@@ -95,10 +98,8 @@ const Experience = () => {
                   index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
                 }`}
               >
-                {/* Timeline Dot */}
                 <div className="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 w-4 h-4 bg-gradient-to-r from-primary-500 to-accent-400 rounded-full border-4 border-dark-900 z-10" />
 
-                {/* Content */}
                 <div
                   className={`w-full md:w-1/2 ${
                     index % 2 === 0
@@ -110,7 +111,6 @@ const Experience = () => {
                     whileHover={{ y: -5, scale: 1.02 }}
                     className="glass-effect rounded-2xl p-6 border border-white/10 hover:border-primary-500/30 transition-all duration-300"
                   >
-                    {/* Experience Header */}
                     <div className="mb-4">
                       <div className="flex items-center justify-between mb-2">
                         <h3 className="text-xl md:text-2xl font-bold text-white">
@@ -141,10 +141,8 @@ const Experience = () => {
                       </div>
                     </div>
 
-                    {/* Description */}
                     <p className="text-gray-300 mb-4">{exp.description}</p>
 
-                    {/* Achievements */}
                     <div className="mb-4">
                       <h4 className="text-lg font-semibold text-white mb-3">
                         Key Achievements:
@@ -162,7 +160,6 @@ const Experience = () => {
                       </ul>
                     </div>
 
-                    {/* Technologies */}
                     <div>
                       <h4 className="text-sm font-semibold text-gray-400 mb-2">
                         Technologies Used:

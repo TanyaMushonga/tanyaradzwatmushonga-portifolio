@@ -116,7 +116,10 @@ const Testimonials = () => {
   };
 
   return (
-    <section id="testimonials" className="py-20 relative bg-dark-900">
+    <section
+      id="testimonials"
+      className="py-20 relative bg-dark-900 overflow-hidden"
+    >
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0 bg-gradient-to-br from-primary-500/10 to-accent-400/10" />
       </div>

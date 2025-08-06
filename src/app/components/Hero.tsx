@@ -35,7 +35,6 @@ const Hero = () => {
   }, []);
 
   useEffect(() => {
-    // Generate floating elements only on client side
     const elements = Array.from({ length: 6 }, (_, i) => ({
       id: i,
       left: Math.random() * 100,

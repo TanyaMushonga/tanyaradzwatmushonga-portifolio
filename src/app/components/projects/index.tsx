@@ -19,7 +19,7 @@ const Projects = () => {
       : projects.filter((project) => project.category === filter);
 
   return (
-    <section id="projects" className="py-20 relative">
+    <section id="projects" className="py-20 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -69,13 +69,26 @@ const Projects = () => {
           >
             <div className="max-w-md mx-auto">
               <div className="w-20 h-20 bg-dark-700 rounded-full flex items-center justify-center mx-auto mb-6">
-                <svg className="w-10 h-10 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2 2v-5m16 0h-2M4 13h2m7-5v5" />
+                <svg
+                  className="w-10 h-10 text-gray-400"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2 2v-5m16 0h-2M4 13h2m7-5v5"
+                  />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold text-white mb-3">No projects found</h3>
+              <h3 className="text-xl font-semibold text-white mb-3">
+                No projects found
+              </h3>
               <p className="text-gray-400">
-                No projects match the selected filter &ldquo;{filter}&rdquo;. Try selecting a different category.
+                No projects match the selected filter &ldquo;{filter}&rdquo;.
+                Try selecting a different category.
               </p>
             </div>
           </motion.div>
