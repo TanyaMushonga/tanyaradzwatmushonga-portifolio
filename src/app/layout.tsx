@@ -16,14 +16,6 @@ export const metadata = {
     type: "website",
     url: "https://tanyaradzwatmushonga.me",
     siteName: "Tanyaradzwa Mushonga Portfolio",
-    images: [
-      {
-        url: "/opengraph-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Tanyaradzwa T Mushonga - Full Stack Developer Portfolio",
-      },
-    ],
     locale: "en_US",
   },
   twitter: {
