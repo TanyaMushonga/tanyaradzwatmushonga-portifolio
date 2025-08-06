@@ -20,7 +20,6 @@ const Experience = () => {
       description:
         "As a fullstack developer l built an internal tool for a South African based company. They use it when carring out their assessment process, when assessing the perfomance of other companies.",
       achievements: [
-        "Responsible for building task management application that they use internally to manage their projects.",
         "Implementing responsive design and ensuring cross-browser compatibility.",
         "Deploying the application on Vercel, and managing different environments.",
         "Implementing robust authentication and authorization system. Using session based authentication and role based access control.",
@@ -44,7 +43,7 @@ const Experience = () => {
       duration: "June 2024 - June 2025",
       current: false,
       description:
-        "As a Mobile Application Developer at Mviyo Technologies, I was responsible for developing and maintaining mobile applications using React Native and other related technologies. My role involved collaborating with cross-functional teams to create high-quality products that meet user needs and business goals.",
+        "As a Mobile Application Developer at Mviyo Technologies, I was responsible for developing and maintaining mobile applications using React Native and other related technologies. My role involved collaborating with cross-functional teams to create high-quality products that meet user needs and business goals. I also had a touch on the backend development using Django Rest Framework.",
       achievements: [
         "Developed and maintained web applications using React.js and other related technologies.",
         "Collaborated with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
@@ -55,7 +54,7 @@ const Experience = () => {
         "Collaborated on Safizen a mobile application that is used by people who offer cleaning services to find clients who uses Safi.",
         "Collaborated on ZimTicket a mobile app that is used for accessing a range of events in Zimbabwe from different event orginizers. The app facilitates the buying of tickets for events.",
       ],
-      technologies: ["React", "Node.js", "AWS", "PostgreSQL", "Docker"],
+      technologies: ["React", "Node.js", "AWS", "PostgreSQL", "Django REST", "Docker"],
     },
   ];
 
