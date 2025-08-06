@@ -65,13 +65,15 @@ const Navbar = () => {
               </motion.a>
             ))}
 
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-gradient-to-r from-primary-500 to-accent-400 px-6 py-2 rounded-full text-white font-medium hover:shadow-lg hover:shadow-primary-500/25 transition-all duration-200"
-            >
-              Hire Me
-            </motion.button>
+            <Link href={"/#contact"}>
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-gradient-to-r from-primary-500 to-accent-400 px-6 py-2 rounded-full text-white font-medium hover:shadow-lg hover:shadow-primary-500/25 transition-all duration-200"
+              >
+                Hire Me
+              </motion.button>
+            </Link>
           </div>
 
           <div className="md:hidden">
@@ -112,14 +114,16 @@ const Navbar = () => {
                   {item.name}
                 </motion.a>
               ))}
-              <motion.button
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: navItems.length * 0.1 }}
-                className="w-full bg-gradient-to-r from-primary-500 to-accent-400 px-6 py-3 rounded-full text-white font-medium mt-4"
-              >
-                Hire Me
-              </motion.button>
+              <Link href={"/#contact"}>
+                <motion.button
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: navItems.length * 0.1 }}
+                  className="w-full bg-gradient-to-r from-primary-500 to-accent-400 px-6 py-3 rounded-full text-white font-medium mt-4"
+                >
+                  Hire Me
+                </motion.button>
+              </Link>
             </div>
           </motion.div>
         )}
