@@ -9,12 +9,7 @@ import {
   CheckCircleIcon,
   ExclamationCircleIcon,
 } from "@heroicons/react/24/outline";
-import {
-  GithubIcon,
-  LinkedinIcon,
-  TwitterIcon,
-  InstagramIcon,
-} from "lucide-react";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -39,33 +34,56 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
-      setStatus({
-        type: "success",
-        message:
-          "Thank you! Your message has been sent successfully. I'll get back to you soon.",
+    try {
+      const response = await fetch("https://formspree.io/f/xrblyvgj", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+        }),
       });
-      setFormData({ name: "", email: "", subject: "", message: "" });
-      setIsSubmitting(false);
 
+      if (response.ok) {
+        setStatus({
+          type: "success",
+          message:
+            "Thank you! Your message has been sent successfully. I'll get back to you soon.",
+        });
+        setFormData({ name: "", email: "", subject: "", message: "" });
+      } else {
+        throw new Error("Failed to send message");
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+      setStatus({
+        type: "error",
+        message:
+          "Sorry, there was an error sending your message. Please try again or contact me directly.",
+      });
+    } finally {
+      setIsSubmitting(false);
       // Clear status after 5 seconds
       setTimeout(() => setStatus({ type: "", message: "" }), 5000);
-    }, 2000);
+    }
   };
 
   const contactInfo = [
     {
       icon: EnvelopeIcon,
       label: "Email",
-      value: "hello@tanyaradzwatmushonga.me",
-      href: "mailto:hello@tanyaradzwatmushonga.me",
+      value: "tanyaradzwatmushonga@gmail.com",
+      href: "mailto:tanyaradzwatmushonga@gmail.com",
     },
     {
       icon: PhoneIcon,
       label: "Phone",
-      value: "+263 77 123 4567",
-      href: "tel:+263771234567",
+      value: "+263 78 013 7696",
+      href: "tel:+263780137696",
     },
     {
       icon: MapPinIcon,
@@ -77,35 +95,22 @@ const Contact = () => {
 
   const socialLinks = [
     {
-      icon: GithubIcon,
+      icon: FaGithub,
       label: "GitHub",
-      href: "https://github.com/tanyaradzwatm",
+      href: "https://github.com/TanyaMushonga/",
       color: "hover:text-gray-400",
     },
     {
-      icon: LinkedinIcon,
+      icon: FaLinkedin,
       label: "LinkedIn",
-      href: "https://linkedin.com/in/tanyaradzwa-mushonga",
+      href: "https://www.linkedin.com/in/tanyaradzwa-t-mushonga-b23745209/",
       color: "hover:text-blue-400",
-    },
-    {
-      icon: TwitterIcon,
-      label: "Twitter",
-      href: "https://twitter.com/tanyaradzwa_tm",
-      color: "hover:text-sky-400",
-    },
-    {
-      icon: InstagramIcon,
-      label: "Instagram",
-      href: "https://instagram.com/tanyaradzwa.tm",
-      color: "hover:text-pink-400",
     },
   ];
 
   return (
     <section id="contact" className="py-20 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -116,13 +121,12 @@ const Contact = () => {
             <span className="gradient-text">Get In Touch</span>
           </h2>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            Ready to bring your ideas to life? Let&apos;s discuss your next project
-            and create something amazing together.
+            Ready to bring your ideas to life? Let&apos;s discuss your next
+            project and create something amazing together.
           </p>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-          {/* Contact Form */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -133,7 +137,6 @@ const Contact = () => {
                 Send a Message
               </h3>
 
-              {/* Status Message */}
               {status.message && (
                 <motion.div
                   initial={{ opacity: 0, y: -10 }}
@@ -257,7 +260,6 @@ const Contact = () => {
             viewport={{ once: true }}
             className="space-y-8"
           >
-            {/* Contact Information */}
             <div className="glass-effect rounded-2xl p-8 border border-white/10">
               <h3 className="text-2xl font-bold text-white mb-6">
                 Contact Information
@@ -284,7 +286,6 @@ const Contact = () => {
               </div>
             </div>
 
-            {/* Social Links */}
             <div className="glass-effect rounded-2xl p-8 border border-white/10">
               <h3 className="text-2xl font-bold text-white mb-6">
                 Connect With Me
@@ -307,7 +308,6 @@ const Contact = () => {
               </div>
             </div>
 
-            {/* Availability Status */}
             <div className="glass-effect rounded-2xl p-8 border border-white/10">
               <div className="flex items-center mb-4">
                 <div className="w-3 h-3 bg-green-400 rounded-full mr-3 animate-pulse"></div>
@@ -316,8 +316,9 @@ const Contact = () => {
                 </h3>
               </div>
               <p className="text-gray-400 text-sm leading-relaxed">
-                I&apos;m currently accepting new projects and collaborations. Let&apos;s
-                discuss how we can work together to bring your vision to life.
+                I&apos;m currently accepting new projects and collaborations.
+                Let&apos;s discuss how we can work together to bring your vision
+                to life.
               </p>
               <div className="mt-4 flex items-center text-sm text-accent-400">
                 <span>Response time: Usually within 24 hours</span>
@@ -326,7 +327,6 @@ const Contact = () => {
           </motion.div>
         </div>
 
-        {/* Call to Action */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -339,8 +339,8 @@ const Contact = () => {
             </h3>
             <p className="text-gray-400 text-lg mb-8 max-w-2xl mx-auto">
               Whether you need a complete web application, mobile app, or just
-              want to discuss an idea, I&apos;m here to help turn your vision into
-              reality.
+              want to discuss an idea, I&apos;m here to help turn your vision
+              into reality.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <motion.a
@@ -352,7 +352,7 @@ const Contact = () => {
                 Start a Project
               </motion.a>
               <motion.a
-                href="mailto:hello@tanyaradzwatmushonga.me"
+                href="mailto:tanyaradzwatmushonga@gmail.com"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="border border-white/20 px-8 py-4 rounded-lg text-white font-semibold hover:bg-white/5 transition-all duration-300"
