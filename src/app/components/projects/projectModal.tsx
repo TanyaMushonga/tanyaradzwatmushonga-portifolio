@@ -18,55 +18,10 @@ import {
   CalendarIcon,
 } from "@heroicons/react/24/outline";
 import Image from "next/image";
+import { Project } from "./types";
 
 interface ProjectModalProps {
-  project: {
-    id: number;
-    title: string;
-    description: string;
-    image: string;
-    category: string;
-    liveUrl: string;
-    githubUrl: string;
-    techStack: string[];
-    status: string;
-    teamSize: string;
-    developmentPeriod: string;
-    metrics: {
-      downloads?: string;
-      rating?: string;
-      retention?: string;
-      transactions?: string;
-      crashRate?: string;
-      activeUsers?: string;
-      events?: string;
-      articles?: string;
-      subscribers?: string;
-      traffic?: string;
-      performance?: string;
-    };
-    keyFeatures: string[];
-    implementation: Array<{
-      title: string;
-      description: string;
-      technologies: string[];
-      challenges?: string[];
-      achievements?: string[];
-    }>;
-    architecture: string;
-    challenges: Array<{
-      description: string;
-      solution: string;
-      impact: string;
-    }>;
-    lessonsLearned: string[];
-    futureImprovements: string[];
-    tags: Array<{
-      name: string;
-      color: string;
-      icon?: string;
-    }>;
-  };
+  project: Project | null;
   isOpen: boolean;
   onClose: () => void;
 }
@@ -116,21 +71,8 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
             </div>
 
             <div className="p-6">
-              <div className="relative h-64 md:h-96 rounded-xl overflow-hidden mb-8">
-                <Image
-                  width={400}
-                  height={300}
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover"
-                  unoptimized // For external images
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-dark-900/60 to-transparent" />
-              </div>
-
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 <div className="lg:col-span-2 space-y-8">
-                  {/* Key Features Section */}
                   {project.keyFeatures?.length > 0 && (
                     <div>
                       <h3 className="text-2xl font-bold text-white mb-4 flex items-center">
@@ -151,7 +93,6 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
                     </div>
                   )}
 
-                  {/* Implementation Details */}
                   <div>
                     <h3 className="text-2xl font-bold text-white mb-4 flex items-center">
                       <CpuChipIcon className="w-6 h-6 text-primary-400 mr-2" />
@@ -170,18 +111,19 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
                             {detail.description}
                           </p>
 
-                          {detail.achievements && detail.achievements.length > 0 && (
-                            <div className="mt-3">
-                              <h5 className="text-sm font-medium text-yellow-400 mb-1">
-                                Achievements:
-                              </h5>
-                              <ul className="list-disc list-inside text-gray-400 text-sm space-y-1">
-                                {detail.achievements.map((achievement, i) => (
-                                  <li key={i}>{achievement}</li>
-                                ))}
-                              </ul>
-                            </div>
-                          )}
+                          {detail.achievements &&
+                            detail.achievements.length > 0 && (
+                              <div className="mt-3">
+                                <h5 className="text-sm font-medium text-yellow-400 mb-1">
+                                  Achievements:
+                                </h5>
+                                <ul className="list-disc list-inside text-gray-400 text-sm space-y-1">
+                                  {detail.achievements.map((achievement, i) => (
+                                    <li key={i}>{achievement}</li>
+                                  ))}
+                                </ul>
+                              </div>
+                            )}
 
                           <div className="mt-4 flex flex-wrap gap-2">
                             {detail.technologies.map((tech, i) => (
@@ -198,7 +140,6 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
                     </div>
                   </div>
 
-                  {/* Architecture & Challenges */}
                   <div>
                     <h3 className="text-2xl font-bold text-white mb-4 flex items-center">
                       <ShieldCheckIcon className="w-6 h-6 text-accent-400 mr-2" />
@@ -219,7 +160,7 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
                           key={index}
                           className="glass-effect p-4 rounded-lg border border-white/10"
                         >
-                          <h4 className="text-lg font-semibold text-yellow-400 mb-2">
+                          <h4 className="text-lg font-semibold text-white mb-2">
                             Challenge: {challenge.description}
                           </h4>
                           <div className="mb-2">
@@ -243,12 +184,11 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
                     </div>
                   </div>
 
-                  {/* Lessons Learned & Future Improvements */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    {project.lessonsLearned?.length > 0 && (
+                    {project.lessonsLearned && project.lessonsLearned.length > 0 && (
                       <div className="glass-effect p-6 rounded-lg border border-white/10">
                         <h3 className="text-xl font-bold text-white mb-4 flex items-center">
-                          <LightBulbIcon className="w-5 h-5 text-yellow-400 mr-2" />
+                          <LightBulbIcon className="w-5 h-5 text-white mr-2" />
                           Lessons Learned
                         </h3>
                         <ul className="space-y-3">
@@ -265,10 +205,10 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
                       </div>
                     )}
 
-                    {project.futureImprovements?.length > 0 && (
+                    {project.futureImprovements && project.futureImprovements.length > 0 && (
                       <div className="glass-effect p-6 rounded-lg border border-white/10">
                         <h3 className="text-xl font-bold text-white mb-4 flex items-center">
-                          <WrenchIcon className="w-5 h-5 text-primary-400 mr-2" />
+                          <WrenchIcon className="w-5 h-5 mr-2" />
                           Future Improvements
                         </h3>
                         <ul className="space-y-3">
@@ -278,7 +218,7 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
                                 key={index}
                                 className="flex items-start text-gray-300"
                               >
-                                <span className="inline-block w-1.5 h-1.5 rounded-full bg-primary-400 mt-2 mr-2 flex-shrink-0"></span>
+                                <span className="inline-block w-1.5 h-1.5 rounded-full bg-yellow-400 mt-2 mr-2 flex-shrink-0"></span>
                                 <span>{improvement}</span>
                               </li>
                             )
@@ -288,10 +228,9 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
                     )}
                   </div>
                 </div>
-
-                {/* Right Sidebar */}
+ 
                 <div className="lg:col-span-1 space-y-6">
-                  {/* Metrics Card */}
+ 
                   <div className="glass-effect p-6 rounded-lg border border-white/10">
                     <h3 className="text-xl font-bold text-white mb-4 flex items-center">
                       <ChartBarIcon className="w-5 h-5 text-primary-400 mr-2" />
@@ -313,8 +252,7 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
                       ))}
                     </div>
                   </div>
-
-                  {/* Tech Stack Card */}
+ 
                   <div className="glass-effect p-6 rounded-lg border border-white/10">
                     <h3 className="text-xl font-bold text-white mb-4 flex items-center">
                       <DocumentTextIcon className="w-5 h-5 text-accent-400 mr-2" />
@@ -332,7 +270,7 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
                     </div>
                   </div>
 
-                  {/* Project Info Card */}
+               
                   <div className="glass-effect p-6 rounded-lg border border-white/10">
                     <h3 className="text-xl font-bold text-white mb-4 flex items-center">
                       <CalendarIcon className="w-5 h-5 text-yellow-400 mr-2" />
@@ -368,8 +306,7 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
                       )}
                     </div>
                   </div>
-
-                  {/* Tags Card */}
+ 
                   {project.tags?.length > 0 && (
                     <div className="glass-effect p-6 rounded-lg border border-white/10">
                       <h3 className="text-xl font-bold text-white mb-4">
@@ -394,7 +331,7 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
                     </div>
                   )}
 
-                  {/* Action Buttons */}
+              
                   <div className="space-y-3">
                     {project.liveUrl && (
                       <motion.button
