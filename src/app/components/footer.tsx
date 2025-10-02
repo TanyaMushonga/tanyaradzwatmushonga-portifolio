@@ -128,8 +128,8 @@ const Footer = () => {
                   Get In Touch
                 </h4>
                 <div className="space-y-3 text-gray-400">
-                  <p>hello@tanyaradzwatmushonga.me</p>
-                  <p>+263 77 123 4567</p>
+                  <p>tanyaradzwatmushonga@gmail.com</p>
+                  <p>+263 78 013 7696</p>
                   <p>Harare, Zimbabwe</p>
                   <div className="mt-4 p-3 bg-green-500/10 border border-green-500/20 rounded-lg">
                     <div className="flex items-center text-green-400 text-sm">
@@ -153,7 +153,7 @@ const Footer = () => {
             >
               <span>© {currentYear} Built with</span>
               <HeartIcon className="w-4 h-4 mx-2 text-red-400" />
-              <span>by Tanyaradzwa Mushonga</span>
+              <span>by Tanyaradzwa T Mushonga</span>
             </motion.div>
 
             <div className="flex items-center space-x-6">
