@@ -3,16 +3,16 @@ import Navbar from "./components/NavBar";
 import "./globals.css";
 
 export const metadata = {
-  title: "Tanyaradzwa T Mushonga - Full Stack Developer",
+  title: "Tanyaradzwa T Mushonga - Frontend Engineer | Mobile Specialist",
   description:
-    "Portfolio of Tanyaradzwa Mushonga, a passionate full-stack developer specializing in modern web technologies.",
+    "Portfolio of Tanyaradzwa Mushonga, a Frontend Engineer and Mobile Specialist building pixel-perfect web experiences.",
   keywords:
-    "developer, full-stack, react, next.js, node.js, python, zimbabwe, harare",
+    "frontend, mobile, react native, next.js, typescript, developer, zimbabwe, harare",
   authors: [{ name: "Tanyaradzwa T Mushonga" }],
   openGraph: {
-    title: "Tanyaradzwa T Mushonga - Full Stack Developer",
+    title: "Tanyaradzwa T Mushonga - Frontend Engineer | Mobile Specialist",
     description:
-      "Portfolio showcasing innovative web applications and development expertise",
+      "Portfolio showcasing innovative web applications and cross-platform mobile apps.",
     type: "website",
     url: "https://tanyaradzwatmushonga.me",
     siteName: "Tanyaradzwa Mushonga Portfolio",
@@ -20,9 +20,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Tanyaradzwa T Mushonga - Full Stack Developer",
+    title: "Tanyaradzwa T Mushonga - Frontend Engineer | Mobile Specialist",
     description:
-      "Portfolio showcasing innovative web applications and development expertise",
+      "Portfolio showcasing innovative web applications and cross-platform mobile apps",
     images: ["/opengraph-image.jpg"],
     creator: "@tanyaradzwa_tm",
   },
