@@ -23,10 +23,10 @@ const Experience = () => {
         "As a fullstack developer l built an internal tool for a South African based company. They use it when carring out their assessment process, when assessing the perfomance of other companies.",
       achievements: [
         "Implementing responsive design and ensuring cross-browser compatibility.",
-        "Deploying the application on Vercel, and managing different environments.",
-        "Implementing robust authentication and authorization system. Using session based authentication and role based access control.",
-        "Integrating the application with AWS services, like S3 for file storage, RDS for database",
-        "Integrated ChatGPT API for report generation and analytics",
+        "Deploying the application on Vercel.",
+        "Implementing robust authentication.",
+        "Integrating with AWS services.",
+        "Integrated ChatGPT API.",
       ],
       technologies: [
         "Next.js",
@@ -45,16 +45,14 @@ const Experience = () => {
       duration: "June 2024 - June 2025",
       current: false,
       description:
-        "As a Mobile Application Developer at Mviyo Technologies, I was responsible for developing and maintaining mobile applications using React Native and other related technologies. My role involved collaborating with cross-functional teams to create high-quality products that meet user needs and business goals. I also had a touch on the backend development using Django Rest Framework.",
+        "Responsible for developing and maintaining mobile applications using React Native. Collaborated with cross-functional teams to create high-quality products that meet user needs and business goals.",
       achievements: [
-        "Developed and maintained web applications using React.js and other related technologies.",
-        "Collaborated with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-        "Integrated with RESTful APIs, third-party libraries, and services like stripe for payment processing.",
-        "Implemented responsive design and ensuring cross-browser compatibility.",
-        "Participated in code reviews and providing constructive feedback to other developers.",
-        "Collaborated on Safi a mobile application that is used by people to book cleaning services.",
-        "Collaborated on Safizen a mobile application that is used by people who offer cleaning services to find clients who uses Safi.",
-        "Collaborated on ZimTicket a mobile app that is used for accessing a range of events in Zimbabwe from different event orginizers. The app facilitates the buying of tickets for events.",
+        "Developed web apps using React.js.",
+        "Collaborated with cross-functional teams.",
+        "Integrated with RESTful APIs & Stripe.",
+        "Implemented responsive design.",
+        "Collaborated on Safi & Safizen apps.",
+        "Collaborated on ZimTicket mobile app.",
       ],
       technologies: [
         "React",
@@ -65,29 +63,96 @@ const Experience = () => {
         "Docker",
       ],
     },
+    {
+      id: 3,
+      title: "Backend Developer (Simulated)",
+      company: "Tech Solutions Inc.",
+      location: "Remote",
+      type: "Contract",
+      duration: "Jan 2024 - May 2024",
+      current: false,
+      description:
+        "Designed and implemented scalable RESTful APIs associated with high-traffic e-commerce platforms. Focused on performance optimization and database management.",
+      achievements: [
+        "Optimized database queries.",
+        "Implemented Redis caching.",
+        "Developed microservices architecture.",
+        "Secured APIs with OAuth2.",
+      ],
+      technologies: [
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "Redis",
+        "Docker",
+      ],
+    },
+    {
+      id: 4,
+      title: "Frontend Developer (Simulated)",
+      company: "Creative Agency",
+      location: "Cape Town, SA",
+      type: "Freelance",
+      duration: "Aug 2023 - Dec 2023",
+      current: false,
+      description:
+        "Created pixel-perfect interactive UI components for various client marketing websites. Focused on animations and user experience.",
+      achievements: [
+        "Built responsive landing pages.",
+        "Implemented complex GSAP animations.",
+        "Improved Core Web Vitals.",
+        "Collaborated with UI/UX designers.",
+      ],
+      technologies: [
+        "React",
+        "GSAP",
+        "Tailwind CSS",
+        "Framer Motion",
+      ],
+    },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const [direction, setDirection] = useState(0);
+  const [itemsPerView, setItemsPerView] = useState(1);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768) {
+        setItemsPerView(2);
+      } else {
+        setItemsPerView(1);
+      }
+    };
+
+    // Initial check
+    handleResize();
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
 
   useEffect(() => {
     if (!isPaused) {
       const interval = setInterval(() => {
         nextSlide();
-      }, 5000); // Change slide every 5 seconds
+      }, 5000);
       return () => clearInterval(interval);
     }
-  }, [currentIndex, isPaused]);
+  }, [currentIndex, isPaused, itemsPerView]);
+
+  const maxIndex = Math.ceil(experiences.length / itemsPerView) - 1;
 
   const nextSlide = () => {
     setDirection(1);
-    setCurrentIndex((prev) => (prev + 1) % experiences.length);
+    setCurrentIndex((prev) => (prev + 1 > maxIndex ? 0 : prev + 1));
   };
 
   const prevSlide = () => {
     setDirection(-1);
-    setCurrentIndex((prev) => (prev - 1 + experiences.length) % experiences.length);
+    setCurrentIndex((prev) => (prev - 1 < 0 ? maxIndex : prev - 1));
   };
 
   const variants = {
@@ -107,7 +172,13 @@ const Experience = () => {
     }),
   };
 
-  const currentExp = experiences[currentIndex];
+  const currentBatch = experiences.slice(
+    currentIndex * itemsPerView,
+    (currentIndex * itemsPerView) + itemsPerView
+  );
+
+  // Hande edge case where last batch might have fewer items (though with 4 items and 2 per view it's exact)
+  // If undefined, it just won't render, but let's ensure safety if data changes.
 
   return (
     <section id="experience" className="py-20 relative overflow-hidden">
@@ -128,26 +199,26 @@ const Experience = () => {
         </motion.div>
 
         <div
-          className="relative max-w-4xl mx-auto"
+          className="relative max-w-7xl mx-auto"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
         >
           {/* Navigation Buttons */}
           <button
             onClick={prevSlide}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 z-20 p-2 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-white transition-all hidden md:block"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -ml-4 md:-ml-12 z-20 p-2 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-white transition-all hidden md:block"
           >
             <ChevronLeftIcon className="w-6 h-6" />
           </button>
 
           <button
             onClick={nextSlide}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 z-20 p-2 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-white transition-all hidden md:block"
+            className="absolute right-0 top-1/2 -translate-y-1/2 -mr-4 md:-mr-12 z-20 p-2 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-white transition-all hidden md:block"
           >
             <ChevronRightIcon className="w-6 h-6" />
           </button>
 
-          <div className="overflow-hidden min-h-[600px]">
+          <div className="overflow-hidden min-h-[500px]">
             <AnimatePresence initial={false} custom={direction} mode="wait">
               <motion.div
                 key={currentIndex}
@@ -160,87 +231,87 @@ const Experience = () => {
                   x: { type: "spring", stiffness: 300, damping: 30 },
                   opacity: { duration: 0.2 },
                 }}
-                className="w-full"
+                className="w-full grid grid-cols-1 md:grid-cols-2 gap-6"
               >
-                <div className="glass-effect rounded-2xl p-8 border border-white/10">
-                  <div className="flex flex-col md:flex-row md:items-start justify-between gap-6 mb-8">
-                    <div>
-                      <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">
-                        {currentExp.title}
-                      </h3>
-                      <div className="flex items-center text-primary-400 font-semibold text-lg flex-wrap gap-2">
-                        <BuildingOfficeIcon className="w-5 h-5" />
-                        <span>{currentExp.company}</span>
-                        <span className="text-gray-600">•</span>
-                        <span className="text-accent-400">{currentExp.type}</span>
-                        {currentExp.current && (
-                          <span className="ml-2 bg-gradient-to-r from-green-400 to-emerald-500 text-white px-3 py-1 rounded-full text-xs font-semibold">
-                            Current
-                          </span>
-                        )}
+                {currentBatch.map((exp) => (
+                  <div key={exp.id} className="glass-effect rounded-2xl p-8 border border-white/10 h-full flex flex-col">
+                    <div className="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-6">
+                      <div>
+                        <h3 className="text-xl md:text-2xl font-bold text-white mb-2 line-clamp-1" title={exp.title}>
+                          {exp.title}
+                        </h3>
+                        <div className="flex items-center text-primary-400 font-semibold text-sm flex-wrap gap-2">
+                          <BuildingOfficeIcon className="w-4 h-4" />
+                          <span>{exp.company}</span>
+                          {exp.current && (
+                            <span className="bg-gradient-to-r from-green-400 to-emerald-500 text-white px-2 py-0.5 rounded-full text-xs font-semibold">
+                              Current
+                            </span>
+                          )}
+                        </div>
+                      </div>
+
+                      <div className="flex flex-col md:items-end text-gray-400 text-xs gap-1 shrink-0">
+                        <div className="flex items-center">
+                          <CalendarIcon className="w-3 h-3 mr-1" />
+                          <span>{exp.duration}</span>
+                        </div>
+                        <div className="flex items-center">
+                          <MapPinIcon className="w-3 h-3 mr-1" />
+                          <span>{exp.location}</span>
+                        </div>
                       </div>
                     </div>
 
-                    <div className="flex flex-col md:items-end text-gray-400 text-sm gap-2">
-                      <div className="flex items-center">
-                        <CalendarIcon className="w-4 h-4 mr-2" />
-                        <span>{currentExp.duration}</span>
+                    <p className="text-gray-300 mb-6 text-sm leading-relaxed flex-grow">
+                      {exp.description}
+                    </p>
+
+                    <div className="space-y-4">
+                      <div>
+                        <h4 className="text-sm font-semibold text-white mb-2 flex items-center">
+                          <span className="w-1 h-4 bg-primary-500 rounded-full mr-2"></span>
+                          Key Achievements
+                        </h4>
+                        <ul className="space-y-1.5">
+                          {exp.achievements.slice(0, 3).map((achievement, i) => (
+                            <li
+                              key={i}
+                              className="flex items-start text-gray-400 text-xs"
+                            >
+                              <ChevronRightIcon className="w-3 h-3 text-primary-400 mr-1.5 mt-0.5 flex-shrink-0" />
+                              <span className="line-clamp-2">{achievement}</span>
+                            </li>
+                          ))}
+                        </ul>
                       </div>
-                      <div className="flex items-center">
-                        <MapPinIcon className="w-4 h-4 mr-2" />
-                        <span>{currentExp.location}</span>
+
+                      <div>
+                        <h4 className="text-sm font-semibold text-white mb-2 flex items-center">
+                          <span className="w-1 h-4 bg-accent-500 rounded-full mr-2"></span>
+                          Technologies
+                        </h4>
+                        <div className="flex flex-wrap gap-1.5">
+                          {exp.technologies.slice(0, 6).map((tech, i) => (
+                            <span
+                              key={i}
+                              className="bg-white/5 border border-white/5 px-2 py-1 rounded text-xs text-gray-300"
+                            >
+                              {tech}
+                            </span>
+                          ))}
+                        </div>
                       </div>
                     </div>
                   </div>
-
-                  <p className="text-gray-300 mb-8 leading-relaxed">
-                    {currentExp.description}
-                  </p>
-
-                  <div className="grid md:grid-cols-2 gap-8">
-                    <div>
-                      <h4 className="text-lg font-semibold text-white mb-4 flex items-center">
-                        <span className="w-1 h-6 bg-primary-500 rounded-full mr-3"></span>
-                        Key Achievements
-                      </h4>
-                      <ul className="space-y-3">
-                        {currentExp.achievements.map((achievement, i) => (
-                          <li
-                            key={i}
-                            className="flex items-start text-gray-300 text-sm"
-                          >
-                            <ChevronRightIcon className="w-4 h-4 text-primary-400 mr-2 mt-0.5 flex-shrink-0" />
-                            <span>{achievement}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    <div>
-                      <h4 className="text-lg font-semibold text-white mb-4 flex items-center">
-                        <span className="w-1 h-6 bg-accent-500 rounded-full mr-3"></span>
-                        Technologies
-                      </h4>
-                      <div className="flex flex-wrap gap-2">
-                        {currentExp.technologies.map((tech, i) => (
-                          <span
-                            key={i}
-                            className="bg-white/5 border border-white/5 hover:border-white/20 px-3 py-1.5 rounded-lg text-sm text-gray-300 transition-colors"
-                          >
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                ))}
               </motion.div>
             </AnimatePresence>
           </div>
 
           {/* Indicators */}
           <div className="flex justify-center mt-8 gap-2">
-            {experiences.map((_, index) => (
+            {Array.from({ length: maxIndex + 1 }).map((_, index) => (
               <button
                 key={index}
                 onClick={() => {
