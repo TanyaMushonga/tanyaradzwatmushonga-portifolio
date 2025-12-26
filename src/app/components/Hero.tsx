@@ -8,11 +8,13 @@ import {
 import { useEffect, useState } from "react";
 
 const roles = [
-  "Software Engineer",
+  "Frontend Engineer",
+  "Mobile Specialist",
+  "DevOps Engineer",
   "Full Stack Developer",
-  "React Specialist",
-  "Node.js Expert",
-  "Problem Solver",
+  "AWS expert",
+  "React Native Developer",
+  "Next.js Architect",
 ];
 
 const Hero = () => {
@@ -135,9 +137,8 @@ const Hero = () => {
           variants={itemVariants}
           className="text-xl md:text-2xl text-gray-400 max-w-4xl mx-auto mb-12 leading-relaxed"
         >
-          I create innovative digital experiences using cutting-edge
-          technologies. Passionate about building scalable applications that
-          make a difference.
+          Building pixel-perfect web experiences with Next.js and cross-platform
+          mobile apps with React Native.
         </motion.p>
 
         <motion.div
