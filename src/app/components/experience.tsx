@@ -1,10 +1,12 @@
 "use client";
-import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   CalendarIcon,
   MapPinIcon,
   BuildingOfficeIcon,
   ChevronRightIcon,
+  ChevronLeftIcon,
 } from "@heroicons/react/24/outline";
 
 const Experience = () => {
@@ -65,6 +67,48 @@ const Experience = () => {
     },
   ];
 
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const [direction, setDirection] = useState(0);
+
+  useEffect(() => {
+    if (!isPaused) {
+      const interval = setInterval(() => {
+        nextSlide();
+      }, 5000); // Change slide every 5 seconds
+      return () => clearInterval(interval);
+    }
+  }, [currentIndex, isPaused]);
+
+  const nextSlide = () => {
+    setDirection(1);
+    setCurrentIndex((prev) => (prev + 1) % experiences.length);
+  };
+
+  const prevSlide = () => {
+    setDirection(-1);
+    setCurrentIndex((prev) => (prev - 1 + experiences.length) % experiences.length);
+  };
+
+  const variants = {
+    enter: (direction: number) => ({
+      x: direction > 0 ? 1000 : -1000,
+      opacity: 0,
+    }),
+    center: {
+      zIndex: 1,
+      x: 0,
+      opacity: 1,
+    },
+    exit: (direction: number) => ({
+      zIndex: 0,
+      x: direction < 0 ? 1000 : -1000,
+      opacity: 0,
+    }),
+  };
+
+  const currentExp = experiences[currentIndex];
+
   return (
     <section id="experience" className="py-20 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -83,72 +127,84 @@ const Experience = () => {
           </p>
         </motion.div>
 
-        <div className="relative">
-          <div className="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 w-0.5 h-full bg-gradient-to-b from-primary-500 to-accent-400" />
+        <div
+          className="relative max-w-4xl mx-auto"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+        >
+          {/* Navigation Buttons */}
+          <button
+            onClick={prevSlide}
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 z-20 p-2 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-white transition-all hidden md:block"
+          >
+            <ChevronLeftIcon className="w-6 h-6" />
+          </button>
 
-          <div className="space-y-12">
-            {experiences.map((exp, index) => (
+          <button
+            onClick={nextSlide}
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 z-20 p-2 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-white transition-all hidden md:block"
+          >
+            <ChevronRightIcon className="w-6 h-6" />
+          </button>
+
+          <div className="overflow-hidden min-h-[600px]">
+            <AnimatePresence initial={false} custom={direction} mode="wait">
               <motion.div
-                key={exp.id}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.2 }}
-                className={`relative flex items-center ${
-                  index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-                }`}
+                key={currentIndex}
+                custom={direction}
+                variants={variants}
+                initial="enter"
+                animate="center"
+                exit="exit"
+                transition={{
+                  x: { type: "spring", stiffness: 300, damping: 30 },
+                  opacity: { duration: 0.2 },
+                }}
+                className="w-full"
               >
-                <div className="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 w-4 h-4 bg-gradient-to-r from-primary-500 to-accent-400 rounded-full border-4 border-dark-900 z-10" />
-
-                <div
-                  className={`w-full md:w-1/2 ${
-                    index % 2 === 0
-                      ? "md:pr-12 pl-12 md:pl-0"
-                      : "md:pl-12 pl-12"
-                  }`}
-                >
-                  <motion.div
-                    whileHover={{ y: -5, scale: 1.02 }}
-                    className="glass-effect rounded-2xl p-6 border border-white/10 hover:border-primary-500/30 transition-all duration-300"
-                  >
-                    <div className="mb-4">
-                      <div className="flex items-center justify-between mb-2">
-                        <h3 className="text-xl md:text-2xl font-bold text-white">
-                          {exp.title}
-                        </h3>
-                        {exp.current && (
-                          <span className="bg-gradient-to-r from-green-400 to-emerald-500 text-white px-3 py-1 rounded-full text-xs font-semibold">
+                <div className="glass-effect rounded-2xl p-8 border border-white/10">
+                  <div className="flex flex-col md:flex-row md:items-start justify-between gap-6 mb-8">
+                    <div>
+                      <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">
+                        {currentExp.title}
+                      </h3>
+                      <div className="flex items-center text-primary-400 font-semibold text-lg flex-wrap gap-2">
+                        <BuildingOfficeIcon className="w-5 h-5" />
+                        <span>{currentExp.company}</span>
+                        <span className="text-gray-600">•</span>
+                        <span className="text-accent-400">{currentExp.type}</span>
+                        {currentExp.current && (
+                          <span className="ml-2 bg-gradient-to-r from-green-400 to-emerald-500 text-white px-3 py-1 rounded-full text-xs font-semibold">
                             Current
                           </span>
                         )}
                       </div>
-
-                      <div className="space-y-2">
-                        <div className="flex items-center text-primary-400 font-semibold">
-                          <BuildingOfficeIcon className="w-4 h-4 mr-2" />
-                          <span>{exp.company}</span>
-                          <span className="mx-2">•</span>
-                          <span className="text-accent-400">{exp.type}</span>
-                        </div>
-
-                        <div className="flex items-center text-gray-400 text-sm">
-                          <CalendarIcon className="w-4 h-4 mr-2" />
-                          <span>{exp.duration}</span>
-                          <span className="mx-2">•</span>
-                          <MapPinIcon className="w-4 h-4 mr-1" />
-                          <span>{exp.location}</span>
-                        </div>
-                      </div>
                     </div>
 
-                    <p className="text-gray-300 mb-4">{exp.description}</p>
+                    <div className="flex flex-col md:items-end text-gray-400 text-sm gap-2">
+                      <div className="flex items-center">
+                        <CalendarIcon className="w-4 h-4 mr-2" />
+                        <span>{currentExp.duration}</span>
+                      </div>
+                      <div className="flex items-center">
+                        <MapPinIcon className="w-4 h-4 mr-2" />
+                        <span>{currentExp.location}</span>
+                      </div>
+                    </div>
+                  </div>
 
-                    <div className="mb-4">
-                      <h4 className="text-lg font-semibold text-white mb-3">
-                        Key Achievements:
+                  <p className="text-gray-300 mb-8 leading-relaxed">
+                    {currentExp.description}
+                  </p>
+
+                  <div className="grid md:grid-cols-2 gap-8">
+                    <div>
+                      <h4 className="text-lg font-semibold text-white mb-4 flex items-center">
+                        <span className="w-1 h-6 bg-primary-500 rounded-full mr-3"></span>
+                        Key Achievements
                       </h4>
-                      <ul className="space-y-2">
-                        {exp.achievements.map((achievement, i) => (
+                      <ul className="space-y-3">
+                        {currentExp.achievements.map((achievement, i) => (
                           <li
                             key={i}
                             className="flex items-start text-gray-300 text-sm"
@@ -161,23 +217,41 @@ const Experience = () => {
                     </div>
 
                     <div>
-                      <h4 className="text-sm font-semibold text-gray-400 mb-2">
-                        Technologies Used:
+                      <h4 className="text-lg font-semibold text-white mb-4 flex items-center">
+                        <span className="w-1 h-6 bg-accent-500 rounded-full mr-3"></span>
+                        Technologies
                       </h4>
                       <div className="flex flex-wrap gap-2">
-                        {exp.technologies.map((tech, i) => (
+                        {currentExp.technologies.map((tech, i) => (
                           <span
                             key={i}
-                            className="bg-dark-800 px-3 py-1 rounded-md text-xs text-gray-300"
+                            className="bg-white/5 border border-white/5 hover:border-white/20 px-3 py-1.5 rounded-lg text-sm text-gray-300 transition-colors"
                           >
                             {tech}
                           </span>
                         ))}
                       </div>
                     </div>
-                  </motion.div>
+                  </div>
                 </div>
               </motion.div>
+            </AnimatePresence>
+          </div>
+
+          {/* Indicators */}
+          <div className="flex justify-center mt-8 gap-2">
+            {experiences.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => {
+                  setDirection(index > currentIndex ? 1 : -1);
+                  setCurrentIndex(index);
+                }}
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentIndex
+                    ? "bg-primary-500 w-8"
+                    : "bg-white/20 hover:bg-white/40"
+                  }`}
+              />
             ))}
           </div>
         </div>
