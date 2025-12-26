@@ -3,26 +3,50 @@ import Navbar from "./components/NavBar";
 import "./globals.css";
 
 export const metadata = {
-  title: "Tanyaradzwa T Mushonga - Frontend Engineer | Mobile Specialist",
+  metadataBase: new URL("https://tanyaradzwatmushonga.me"),
+  title: {
+    default: "Tanyaradzwa T Mushonga - Frontend Engineer | Mobile Specialist",
+    template: "%s | Tanyaradzwa Mushonga"
+  },
   description:
-    "Portfolio of Tanyaradzwa Mushonga, a Frontend Engineer and Mobile Specialist building pixel-perfect web experiences.",
-  keywords:
-    "frontend, mobile, react native, next.js, typescript, developer, zimbabwe, harare",
-  authors: [{ name: "Tanyaradzwa T Mushonga" }],
+    "Portfolio of Tanyaradzwa Mushonga, a Frontend Engineer and Mobile Specialist building pixel-perfect web experiences with Next.js and React Native.",
+  alternates: {
+    canonical: "/",
+  },
+  keywords: [
+    "frontend engineer",
+    "mobile specialist",
+    "react native developer",
+    "next.js expert",
+    "typescript",
+    "web development",
+    "zimbabwe",
+    "software engineer"
+  ],
+  authors: [{ name: "Tanyaradzwa T Mushonga", url: "https://tanyaradzwatmushonga.me" }],
+  creator: "Tanyaradzwa T Mushonga",
   openGraph: {
     title: "Tanyaradzwa T Mushonga - Frontend Engineer | Mobile Specialist",
     description:
-      "Portfolio showcasing innovative web applications and cross-platform mobile apps.",
+      "Tanyaradzwa Mushonga is a specialized Frontend Engineer and Mobile App Developer building high-performance, pixel-perfect digital experiences.",
     type: "website",
     url: "https://tanyaradzwatmushonga.me",
     siteName: "Tanyaradzwa Mushonga Portfolio",
     locale: "en_US",
+    images: [
+      {
+        url: "/opengraph-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Tanyaradzwa Mushonga Portfolio"
+      }
+    ]
   },
   twitter: {
     card: "summary_large_image",
     title: "Tanyaradzwa T Mushonga - Frontend Engineer | Mobile Specialist",
     description:
-      "Portfolio showcasing innovative web applications and cross-platform mobile apps",
+      "Specialized Frontend Engineer and Mobile App Developer. View my portfolio.",
     images: ["/opengraph-image.jpg"],
     creator: "@tanyaradzwa_tm",
   },
@@ -36,6 +60,11 @@ export const metadata = {
       "max-image-preview": "large",
       "max-snippet": -1,
     },
+  },
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 1,
   },
 };
 
