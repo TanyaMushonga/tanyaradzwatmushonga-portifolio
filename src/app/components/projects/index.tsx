@@ -13,10 +13,26 @@ const Projects = () => {
 
   const categories = ["all", "Web Application", "Mobile Application", "api"];
 
-  const filteredProjects =
-    filter === "all"
-      ? projects
-      : projects.filter((project) => project.category === filter);
+  const filteredProjects = React.useMemo(() => {
+    const result =
+      filter === "all"
+        ? projects
+        : projects.filter((project) => project.category === filter);
+
+    // Sort: Next.js and React Native projects first
+    return result.sort((a, b) => {
+      const aIsPriority =
+        a.techStack.some((t) => /Next\.js|React Native/i.test(t)) ||
+        /Next\.js|React Native/i.test(a.category);
+      const bIsPriority =
+        b.techStack.some((t) => /Next\.js|React Native/i.test(t)) ||
+        /Next\.js|React Native/i.test(b.category);
+
+      if (aIsPriority && !bIsPriority) return -1;
+      if (!aIsPriority && bIsPriority) return 1;
+      return 0;
+    });
+  }, [filter]);
 
   return (
     <section id="projects" className="py-20 relative overflow-hidden">
