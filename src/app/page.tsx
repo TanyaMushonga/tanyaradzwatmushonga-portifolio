@@ -1,5 +1,4 @@
 import Research from "./components/research/Research";
-import Hackathons from "./components/hackathons/Hackathons";
 import Certifications from "./components/certs/certifications";
 import Contact from "./components/contact";
 import Experience from "./components/experience";
@@ -19,7 +18,6 @@ export default function Home() {
       <Skills />
       <Experience />
       <Research />
-      {/* <Hackathons /> */}
       <Certifications />
       <Awards />
       <Testimonials />
