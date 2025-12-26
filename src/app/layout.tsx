@@ -33,21 +33,12 @@ export const metadata = {
     url: "https://tanyaradzwatmushonga.me",
     siteName: "Tanyaradzwa Mushonga Portfolio",
     locale: "en_US",
-    images: [
-      {
-        url: "/opengraph-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Tanyaradzwa Mushonga Portfolio"
-      }
-    ]
   },
   twitter: {
     card: "summary_large_image",
     title: "Tanyaradzwa T Mushonga - Frontend Engineer | Mobile Specialist",
     description:
       "Specialized Frontend Engineer and Mobile App Developer. View my portfolio.",
-    images: ["/opengraph-image.jpg"],
     creator: "@tanyaradzwa_tm",
   },
   robots: {
@@ -61,11 +52,12 @@ export const metadata = {
       "max-snippet": -1,
     },
   },
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 1,
-  },
+};
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
 };
 
 export default function RootLayout({
