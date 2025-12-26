@@ -13,11 +13,10 @@ const Skills = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-6xl font-bold mb-6">
-            <span className="gradient-text">Skills & Expertise</span>
+            <span className="gradient-text">Tech Stack</span>
           </h2>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            Comprehensive technical skills across modern development stack and
-            emerging technologies
+            Specialized in the React ecosystem with strong backend foundations.
           </p>
         </motion.div>
 
@@ -45,12 +44,24 @@ const Skills = () => {
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ delay: skillIndex * 0.1 }}
-                    whileHover={{ y: -5, scale: 1.02 }}
-                    className="glass-effect p-6 rounded-xl border border-white/10 group hover:border-primary-500/30 transition-all duration-300"
+                    whileHover={{ y: -10, scale: 1.05, zIndex: 10 }}
+                    animate={{
+                      y: [0, -8, 0],
+                      transition: {
+                        duration: 4,
+                        repeat: Infinity,
+                        repeatType: "reverse",
+                        ease: "easeInOut",
+                        delay: skillIndex * 0.5
+                      }
+                    }}
+                    className="glass-effect p-6 rounded-xl border border-white/10 group hover:border-primary-500/50 hover:shadow-[0_0_30px_rgba(56,189,248,0.2)] transition-all duration-300 relative overflow-hidden"
                   >
-                    <div className="flex items-center justify-between mb-4">
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary-500/5 to-accent-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+                    <div className="flex items-center justify-between mb-4 relative z-10">
                       <div className="flex items-center">
-                        <div className="w-12 h-12 bg-gradient-to-r from-primary-500/20 to-accent-400/20 rounded-lg flex items-center justify-center mr-3">
+                        <div className="w-12 h-12 bg-gradient-to-r from-primary-500/20 to-accent-400/20 rounded-lg flex items-center justify-center mr-3 group-hover:scale-110 transition-transform duration-300">
                           <span className="text-2xl">{skill.icon}</span>
                         </div>
                         <div>
@@ -64,32 +75,12 @@ const Skills = () => {
                       </div>
                     </div>
 
-                    <div className="mb-4">
-                      <div className="flex items-center justify-between mb-2">
-                        <span className="text-sm text-gray-400">
-                          Proficiency
-                        </span>
-                        <span className="text-sm font-semibold text-primary-400">
-                          {skill.level}%
-                        </span>
-                      </div>
-                      <div className="w-full bg-dark-800 rounded-full h-2">
-                        <motion.div
-                          initial={{ width: 0 }}
-                          whileInView={{ width: `${skill.level}%` }}
-                          viewport={{ once: true }}
-                          transition={{ duration: 1, delay: skillIndex * 0.1 }}
-                          className="bg-gradient-to-r from-primary-500 to-accent-400 h-2 rounded-full"
-                        />
-                      </div>
-                    </div>
-
                     {skill.related && (
-                      <div className="flex flex-wrap gap-2">
+                      <div className="flex flex-wrap gap-2 relative z-10 mt-4 opacity-70 group-hover:opacity-100 transition-opacity">
                         {skill.related.map((tech, index) => (
                           <span
                             key={index}
-                            className="bg-dark-800 px-2 py-1 rounded-md text-xs text-gray-300"
+                            className="bg-white/5 border border-white/5 px-2 py-1 rounded-md text-xs text-gray-300 group-hover:bg-white/10 group-hover:border-white/20 transition-colors"
                           >
                             {tech}
                           </span>
