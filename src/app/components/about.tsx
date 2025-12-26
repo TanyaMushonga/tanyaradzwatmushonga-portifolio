@@ -25,20 +25,16 @@ const About = () => {
 
             <div className="space-y-6 text-gray-300 text-lg leading-relaxed">
               <p>
-                I&apos;m a passionate full-stack developer from{" "}
+                I&apos;m a specialized
                 <span className="text-primary-400 font-semibold">
-                  Harare, Zimbabwe
+                  {" "}
+                  Frontend & Mobile Engineer {" "}
                 </span>
-                , with a deep love for creating digital experiences that make a
-                difference. My journey in tech started with curiosity and has
-                evolved into a mission to build scalable, innovative solutions.
+                from Harare, Zimbabwe. While I specialize in crafting beautiful interfaces, my background in Django, Node.js, and DevOps allows me to architect frontends that consume APIs efficiently and deploy seamlessly.
               </p>
 
               <p>
-                With expertise spanning modern web technologies, cloud
-                platforms, and emerging technologies like AI/ML, I bring ideas
-                to life through clean code and thoughtful design. I believe in
-                continuous learning and staying ahead of technological trends.
+                I bridge the gap between design and engineering, ensuring that pixel-perfect UIs are backed by robust, scalable architecture. My &quot;T-shaped&quot; skillset means I can dive deep into React Native performance while understanding the backend implications of every frontend decision.
               </p>
 
               <p>
@@ -57,7 +53,7 @@ const About = () => {
               </div>
               <div className="flex items-center text-gray-400">
                 <UserIcon className="w-5 h-5 mr-2 text-accent-400" />
-                <span>Full Stack Developer</span>
+                <span>Frontend & Mobile Engineer</span>
               </div>
             </div>
           </motion.div>
@@ -72,14 +68,14 @@ const About = () => {
               <div className="absolute inset-0 bg-gradient-to-r from-primary-500 to-accent-400 rounded-3xl rotate-6 opacity-20" />
               <div className="absolute inset-0 glass-effect rounded-3xl border border-white/20" />
               <Image
-                src="/profile.jpg"
+                src="/profile.jpeg"
                 alt="Tanyaradzwa Mushonga"
                 className="relative z-10 w-full h-full object-cover rounded-3xl"
                 width={400}
                 height={400}
               />
 
-           
+
               <motion.div
                 animate={{ y: [0, -80, 0] }}
                 transition={{ repeat: Infinity, duration: 3 }}
