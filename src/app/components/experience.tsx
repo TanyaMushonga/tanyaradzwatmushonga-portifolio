@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   CalendarIcon,
@@ -9,109 +9,86 @@ import {
   ChevronLeftIcon,
 } from "@heroicons/react/24/outline";
 
-const Experience = () => {
-  const experiences = [
-    {
-      id: 1,
-      title: "Full Stack Developer",
-      company: "The Transfomation Legacy",
-      location: "Remote",
-      type: "Part-time",
-      duration: "Jan 2025 - Present",
-      current: true,
-      description:
-        "As a fullstack developer l built an internal tool for a South African based company. They use it when carring out their assessment process, when assessing the perfomance of other companies.",
-      achievements: [
-        "Implementing responsive design and ensuring cross-browser compatibility.",
-        "Deploying the application on Vercel.",
-        "Implementing robust authentication.",
-        "Integrating with AWS services.",
-        "Integrated ChatGPT API.",
-      ],
-      technologies: [
-        "Next.js",
-        "PostgreSQL",
-        "Node.js",
-        "ChatGPT API",
-        "Tailwind CSS",
-      ],
-    },
-    {
-      id: 2,
-      title: "Mobile Application Developer",
-      company: "Mviyo Technologies",
-      location: "On site, Bulawayo, Zimbabwe",
-      type: "Internship",
-      duration: "June 2024 - June 2025",
-      current: false,
-      description:
-        "Responsible for developing and maintaining mobile applications using React Native. Collaborated with cross-functional teams to create high-quality products that meet user needs and business goals.",
-      achievements: [
-        "Developed web apps using React.js.",
-        "Collaborated with cross-functional teams.",
-        "Integrated with RESTful APIs & Stripe.",
-        "Implemented responsive design.",
-        "Collaborated on Safi & Safizen apps.",
-        "Collaborated on ZimTicket mobile app.",
-      ],
-      technologies: [
-        "React",
-        "Node.js",
-        "AWS",
-        "PostgreSQL",
-        "Django REST",
-        "Docker",
-      ],
-    },
-    {
-      id: 3,
-      title: "Backend Developer (Simulated)",
-      company: "Tech Solutions Inc.",
-      location: "Remote",
-      type: "Contract",
-      duration: "Jan 2024 - May 2024",
-      current: false,
-      description:
-        "Designed and implemented scalable RESTful APIs associated with high-traffic e-commerce platforms. Focused on performance optimization and database management.",
-      achievements: [
-        "Optimized database queries.",
-        "Implemented Redis caching.",
-        "Developed microservices architecture.",
-        "Secured APIs with OAuth2.",
-      ],
-      technologies: [
-        "Node.js",
-        "Express",
-        "MongoDB",
-        "Redis",
-        "Docker",
-      ],
-    },
-    {
-      id: 4,
-      title: "Frontend Developer (Simulated)",
-      company: "Creative Agency",
-      location: "Cape Town, SA",
-      type: "Freelance",
-      duration: "Aug 2023 - Dec 2023",
-      current: false,
-      description:
-        "Created pixel-perfect interactive UI components for various client marketing websites. Focused on animations and user experience.",
-      achievements: [
-        "Built responsive landing pages.",
-        "Implemented complex GSAP animations.",
-        "Improved Core Web Vitals.",
-        "Collaborated with UI/UX designers.",
-      ],
-      technologies: [
-        "React",
-        "GSAP",
-        "Tailwind CSS",
-        "Framer Motion",
-      ],
-    },
-  ];
+const experiences = [
+  {
+    id: 1,
+    title: "Frontend Developer",
+    company: "Lanitech360",
+    location: "Remote",
+    type: "Contract",
+    duration: "Dec 2025 - Present",
+    current: true,
+    description:
+      "Lead frontend developer responsible for building comprehensive business suite applications. Owning the entire frontend architecture and API integration using Next.js and React.",
+    achievements: [
+      "Architecting and building business suite applications from scratch.",
+      "Owning the complete frontend development lifecycle.",
+      "Integrating complex APIs with the frontend interface.",
+      "Ensuring high performance and scalable architectural patterns.",
+    ],
+    technologies: [
+      "Next.js",
+      "React.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "API Integration",
+    ],
+  },
+  {
+    id: 2,
+    title: "Full Stack Developer",
+    company: "The Transfomation Legacy",
+    location: "Remote",
+    type: "Part-time",
+    duration: "Jan 2025 - Dec 2025",
+    current: false,
+    description:
+      "As a fullstack developer l built an internal tool for a South African based company. They use it when carring out their assessment process, when assessing the perfomance of other companies.",
+    achievements: [
+      "Implementing responsive design and ensuring cross-browser compatibility.",
+      "Deploying the application on Vercel.",
+      "Implementing robust authentication.",
+      "Integrating with AWS services.",
+      "Integrated ChatGPT API.",
+    ],
+    technologies: [
+      "Next.js",
+      "PostgreSQL",
+      "Node.js",
+      "ChatGPT API",
+      "Tailwind CSS",
+    ],
+  },
+  {
+    id: 3,
+    title: "Mobile Application Developer",
+    company: "Mviyo Technologies",
+    location: "On site, Bulawayo, Zimbabwe",
+    type: "Internship",
+    duration: "June 2024 - June 2025",
+    current: false,
+    description:
+      "Responsible for developing and maintaining mobile applications using React Native. Collaborated with cross-functional teams to create high-quality products that meet user needs and business goals.",
+    achievements: [
+      "Developed web apps using React.js.",
+      "Collaborated with cross-functional teams.",
+      "Integrated with RESTful APIs & Stripe.",
+      "Implemented responsive design.",
+      "Collaborated on Safi & Safizen apps.",
+      "Collaborated on ZimTicket mobile app.",
+    ],
+    technologies: [
+      "React",
+      "Node.js",
+      "AWS",
+      "PostgreSQL",
+      "Django REST",
+      "Docker",
+    ],
+  },
+];
 
+const Experience = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const [direction, setDirection] = useState(0);
@@ -133,6 +110,12 @@ const Experience = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  const maxIndex = Math.ceil(experiences.length / itemsPerView) - 1;
+
+  const nextSlide = useCallback(() => {
+    setDirection(1);
+    setCurrentIndex((prev) => (prev + 1 > maxIndex ? 0 : prev + 1));
+  }, [maxIndex]);
 
   useEffect(() => {
     if (!isPaused) {
@@ -141,14 +124,7 @@ const Experience = () => {
       }, 5000);
       return () => clearInterval(interval);
     }
-  }, [currentIndex, isPaused, itemsPerView]);
-
-  const maxIndex = Math.ceil(experiences.length / itemsPerView) - 1;
-
-  const nextSlide = () => {
-    setDirection(1);
-    setCurrentIndex((prev) => (prev + 1 > maxIndex ? 0 : prev + 1));
-  };
+  }, [currentIndex, isPaused, nextSlide]);
 
   const prevSlide = () => {
     setDirection(-1);
@@ -319,8 +295,8 @@ const Experience = () => {
                   setCurrentIndex(index);
                 }}
                 className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentIndex
-                    ? "bg-primary-500 w-8"
-                    : "bg-white/20 hover:bg-white/40"
+                  ? "bg-primary-500 w-8"
+                  : "bg-white/20 hover:bg-white/40"
                   }`}
               />
             ))}
