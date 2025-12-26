@@ -2,6 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { BookOpen, FileText, FlaskConical } from "lucide-react";
+import Link from "next/link";
 export const researchPapers = [
   {
     title: "Intelligent Aerial Traffic Observation System with Real-Time Speed Detection and Automated Citation Generation",
@@ -56,13 +57,12 @@ const Research = () => {
               </div>
 
               <div className="flex items-center gap-2 mb-4">
-                <span className={`px-3 py-1 rounded-full text-xs font-medium border ${
-                  paper.status === "Published" 
+                <span className={`px-3 py-1 rounded-full text-xs font-medium border ${paper.status === "Published"
                     ? "bg-green-500/10 text-green-400 border-green-500/20"
                     : paper.status === "Under Review"
-                    ? "bg-yellow-500/10 text-yellow-400 border-yellow-500/20"
-                    : "bg-blue-500/10 text-blue-400 border-blue-500/20"
-                }`}>
+                      ? "bg-yellow-500/10 text-yellow-400 border-yellow-500/20"
+                      : "bg-blue-500/10 text-blue-400 border-blue-500/20"
+                  }`}>
                   {paper.status}
                 </span>
                 <span className="text-gray-500 text-sm flex items-center">
@@ -82,9 +82,9 @@ const Research = () => {
                 {paper.abstract}
               </p>
 
-              <div className="flex items-center text-primary-400 text-sm font-medium cursor-pointer group-hover:underline">
+              <Link href={paper.link} target="_blank" className="flex items-center text-primary-400 text-sm font-medium cursor-pointer group-hover:underline">
                 Read Abstract <FlaskConical className="w-4 h-4 ml-2" />
-              </div>
+              </Link>
             </motion.div>
           ))}
         </div>
