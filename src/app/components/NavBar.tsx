@@ -21,8 +21,9 @@ const Navbar = () => {
     { name: "Blog", href: "https://www.thecypherhub.tech/" },
     { name: "About", href: "#about" },
     { name: "Skills", href: "#skills" },
-    { name: "Projects", href: "#projects" },
     { name: "Experience", href: "#experience" },
+    { name: "Certifications", href: "#certifications" },
+    { name: "Projects", href: "#projects" },
     { name: "Awards", href: "#awards" },
   ];
 
@@ -30,11 +31,10 @@ const Navbar = () => {
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className={`fixed top-0 w-screen z-50 transition-all duration-300 ${
-        isScrolled || isMobileMenuOpen
+      className={`fixed top-0 w-screen z-50 transition-all duration-300 ${isScrolled || isMobileMenuOpen
           ? "bg-dark-900/95 backdrop-blur-lg border-b border-white/10"
           : "bg-transparent"
-      }`}
+        }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
