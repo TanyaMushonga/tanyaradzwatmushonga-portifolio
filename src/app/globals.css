@@ -75,17 +75,9 @@
 
 /* Base Styles */
 :root {
-  --background: #ffffff;
-  --foreground: #0f172a;
-  --grid-color: rgba(199, 210, 254, 0.15); /* Light purple grid */
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0f172a;
-    --foreground: #f8fafc;
-    --grid-color: rgba(30, 41, 59, 0.5); /* Darker grid */
-  }
+  --background: #0f172a;
+  --foreground: #f8fafc;
+  --grid-color: rgba(30, 41, 59, 0.5); /* Darker grid */
 }
 
 body {
