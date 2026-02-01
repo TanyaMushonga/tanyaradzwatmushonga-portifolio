@@ -43,8 +43,21 @@ jobs:
 
       - name: Execute Deployment via SSM
         run: |
-          aws ssm send-command \
+          COMMAND_ID=$(aws ssm send-command \
             --document-name "AWS-RunShellScript" \
             --targets "Key=instanceids,Values=${{ secrets.EC2_INSTANCE_ID }}" \
-            --parameters 'commands=["cd ~/projects/tanyaradzwatmushonga-portifolio", "git pull origin main", "npm install --production", "npm run build", "pm2 restart portfolio || pm2 start npm --name \"portfolio\" -- start"]' \
-            --comment "Deploying Next.js update"
+            --parameters 'commands=["sudo -u ubuntu -i bash -c \"cd ~/projects/tanyaradzwatmushonga-portifolio && git pull origin main && npm install --production && npm run build && pm2 restart portfolio || pm2 start npm --name \\\"portfolio\\\" -- start\""]' \
+            --query "Command.CommandId" \
+            --output text)
+
+          echo "Sent Command ID: $COMMAND_ID"
+          echo "Waiting for command to complete..."
+
+          aws ssm wait command-executed \
+            --command-id "$COMMAND_ID" \
+            --instance-id "${{ secrets.EC2_INSTANCE_ID }}"
+
+          aws ssm get-command-invocation \
+            --command-id "$COMMAND_ID" \
+            --instance-id "${{ secrets.EC2_INSTANCE_ID }}" \
+            --query "{Status:Status,Output:StandardOutputContent,Error:StandardErrorContent}"
