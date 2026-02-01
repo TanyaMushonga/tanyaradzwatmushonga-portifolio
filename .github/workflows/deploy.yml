@@ -1,0 +1,50 @@
+name: Deploy to EC2 (Secure)
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  id-token: write # Required for requesting the JWT
+  contents: read # Required for actions/checkout
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "25"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build project
+        run: npm run build
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      - name: Execute Deployment via SSM
+        run: |
+          aws ssm send-command \
+            --document-name "AWS-RunShellScript" \
+            --targets "Key=instanceids,Values=${{ secrets.EC2_INSTANCE_ID }}" \
+            --parameters 'commands=["cd ~/tanyaradzwatmushonga-portifolio", "git pull origin main", "npm install --production", "npm run build", "pm2 restart portfolio || pm2 start npm --name \"portfolio\" -- start"]' \
+            --comment "Deploying Next.js update"
