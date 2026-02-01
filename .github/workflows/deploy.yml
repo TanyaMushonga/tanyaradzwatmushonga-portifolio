@@ -46,5 +46,5 @@ jobs:
           aws ssm send-command \
             --document-name "AWS-RunShellScript" \
             --targets "Key=instanceids,Values=${{ secrets.EC2_INSTANCE_ID }}" \
-            --parameters 'commands=["cd ~/tanyaradzwatmushonga-portifolio", "git pull origin main", "npm install --production", "npm run build", "pm2 restart portfolio || pm2 start npm --name \"portfolio\" -- start"]' \
+            --parameters 'commands=["cd ~/projects/tanyaradzwatmushonga-portifolio", "git pull origin main", "npm install --production", "npm run build", "pm2 restart portfolio || pm2 start npm --name \"portfolio\" -- start"]' \
             --comment "Deploying Next.js update"
