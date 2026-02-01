@@ -46,7 +46,7 @@ jobs:
           COMMAND_ID=$(aws ssm send-command \
             --document-name "AWS-RunShellScript" \
             --targets "Key=instanceids,Values=${{ secrets.EC2_INSTANCE_ID }}" \
-            --parameters 'commands=["sudo -u ubuntu -i bash -c \"cd ~/projects/tanyaradzwatmushonga-portifolio && git pull origin main && npm install --production && npm run build && pm2 restart portfolio || pm2 start npm --name \\\"portfolio\\\" -- start\""]' \
+            --parameters 'commands=["sudo -u ubuntu -i bash -c \"cd ~/projects/tanyaradzwatmushonga-portifolio && git pull origin main && npm install --production && npm run build && pm2 restart portfolio || pm2 start npm --name \\\"portfolio\\\" -- start -- -H 0.0.0.0\""]' \
             --query "Command.CommandId" \
             --output text)
 
