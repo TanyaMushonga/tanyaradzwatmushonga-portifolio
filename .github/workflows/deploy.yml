@@ -46,5 +46,5 @@ jobs:
           aws ssm send-command \
             --document-name "AWS-RunShellScript" \
             --targets "Key=instanceids,Values=${{ secrets.EC2_INSTANCE_ID }}" \
-            --parameters 'commands=["sudo -u ubuntu -i bash -c \"cd ~/projects/tanyaradzwatmushonga-portifolio && git pull origin main && npm install --production && npm run build && pm2 restart portfolio || pm2 start npm --name \\\"portfolio\\\" -- start -- -H 0.0.0.0\""]' \
-            --comment "Deploying Next.js update"
+            --parameters 'commands=["sudo -u ubuntu -i bash -c \"set -e && cd ~/projects/tanyaradzwatmushonga-portifolio && echo \\\"Starting deployment...\\\" && git pull origin main && npm install && NODE_OPTIONS=\\\"--max-old-space-size=1536\\\" npm run build && pm2 restart portfolio || pm2 start npm --name \\\"portfolio\\\" -- start -- -H 0.0.0.0 && pm2 save && echo \\\"Deployment successful!\\\"\""]' \
+            --comment "Deploying Next.js update with improved robustness"
