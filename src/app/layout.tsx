@@ -1,6 +1,7 @@
 import Footer from "./components/footer";
 import Navbar from "./components/NavBar";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata = {
   metadataBase: new URL("https://tanyaradzwatmushonga.me"),
@@ -71,6 +72,7 @@ export default function RootLayout({
         <Navbar />
         <div className="pt-20 md:pt-15">{children}</div>
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
