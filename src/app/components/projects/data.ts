@@ -212,7 +212,7 @@ export const projects = [
       "A modern technical blog platform featuring articles, tutorials, and a weekly newsletter focused on software development trends and best practices.",
     image: "/thecypherhub.png",
     category: "Web Application",
-    liveUrl: "https://www.thecypherhub.tech/",
+    liveUrl: "https://blog.tanyaradzwatmushonga.me/",
     githubUrl: "",
     techStack: [
       "Next.js 13 (App Router)",

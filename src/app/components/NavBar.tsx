@@ -18,7 +18,7 @@ const Navbar = () => {
   }, []);
 
   const navItems = [
-    { name: "Blog", href: "https://www.thecypherhub.tech/" },
+    { name: "Blog", href: "https://blog.tanyaradzwatmushonga.me/" },
     { name: "About", href: "#about" },
     { name: "Skills", href: "#skills" },
     { name: "Experience", href: "#experience" },
