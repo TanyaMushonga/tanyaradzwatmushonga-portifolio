@@ -20,7 +20,8 @@ export const certifications = [
     ],
     score: null,
     certificateUrl: "#",
-    verifyUrl: "https://catalog-education.oracle.com/ords/certview/sharebadge?id=C14FEE9C6EFC4CEE46D0FFDA695C256DE0EFE0579391D36835E92EE682085499",
+    verifyUrl:
+      "https://catalog-education.oracle.com/ords/certview/sharebadge?id=C14FEE9C6EFC4CEE46D0FFDA695C256DE0EFE0579391D36835E92EE682085499",
     logo: "",
   },
   {
@@ -45,7 +46,8 @@ export const certifications = [
     ],
     score: null,
     certificateUrl: "#",
-    verifyUrl: "https://catalog-education.oracle.com/ords/certview/sharebadge?id=7D9860D40DE31AE8986446F9DA817517B578E18802D734B39C5E6D52F2C0B134",
+    verifyUrl:
+      "https://catalog-education.oracle.com/ords/certview/sharebadge?id=7D9860D40DE31AE8986446F9DA817517B578E18802D734B39C5E6D52F2C0B134",
     logo: "",
   },
   {
@@ -67,7 +69,8 @@ export const certifications = [
     ],
     score: null,
     certificateUrl: "#",
-    verifyUrl: "https://www.credly.com/badges/640dba63-8a63-4067-9204-3927cdf2e177/linked_in_profile",
+    verifyUrl:
+      "https://www.credly.com/badges/640dba63-8a63-4067-9204-3927cdf2e177/linked_in_profile",
     logo: "",
   },
   {
@@ -90,7 +93,8 @@ export const certifications = [
     ],
     score: null,
     certificateUrl: "#",
-    verifyUrl: "https://www.credly.com/badges/53958f8c-144d-4b24-80a4-b8aa4320d3c4/linked_in_profile",
+    verifyUrl:
+      "https://www.credly.com/badges/53958f8c-144d-4b24-80a4-b8aa4320d3c4/linked_in_profile",
     logo: "",
   },
 ];
