@@ -207,7 +207,7 @@ export const projects = [
 
   {
     id: 3,
-    title: "The Cypher Hub - Technical Blog",
+    title: "Technical Blog",
     description:
       "A modern technical blog platform featuring articles, tutorials, and a weekly newsletter focused on software development trends and best practices.",
     image: "/thecypherhub.png",
@@ -504,4 +504,326 @@ export const projects = [
       },
     ],
   },
-];
+  {
+    id: 6,
+    title: "AWS Terraform Backend CI/CD",
+    description:
+      "Production-ready Terraform infrastructure for deploying containerized applications to AWS ECS Fargate, automated with CodePipeline and CloudWatch monitoring.",
+    image: "/project-placeholder.svg",
+    category: "Infrastructure",
+    liveUrl: "https://github.com/TanyaMushonga/aws-terraform-backend-cicd",
+    githubUrl: "https://github.com/TanyaMushonga/aws-terraform-backend-cicd",
+    techStack: [
+      "Terraform",
+      "AWS ECS",
+      "AWS CodePipeline",
+      "AWS CodeBuild",
+      "CloudWatch",
+      "Docker",
+    ],
+    status: "Infrastructure as Code",
+    teamSize: "Solo Project",
+    developmentPeriod: "2025",
+    metrics: {
+      deployments: "Automated CI/CD pipeline",
+      monitoring: "CloudWatch alarms configured",
+      availability: "Designed for zero-downtime deploys",
+    },
+    keyFeatures: [
+      "AWS ECS Fargate container orchestration",
+      "Automated CodePipeline build and deploy flow",
+      "Infrastructure modules for reuse",
+      "Monitoring and alerting with CloudWatch",
+    ],
+    implementation: [
+      {
+        title: "Terraform Infrastructure",
+        description:
+          "Built reusable Terraform modules for networking, ECS, and CI/CD resources on AWS.",
+        technologies: ["Terraform", "AWS", "Docker"],
+        achievements: [
+          "Created secure ECS Fargate deployment architecture",
+          "Standardized IaC with reusable modules",
+        ],
+      },
+      {
+        title: "CI/CD Automation",
+        description:
+          "Configured AWS CodePipeline and CodeBuild to build Docker images and deploy containerized services automatically.",
+        technologies: ["AWS CodePipeline", "CodeBuild", "CloudWatch"],
+      },
+    ],
+    architecture:
+      "AWS infrastructure with Terraform-managed VPC, ECS Fargate services, CodePipeline, CodeBuild, and CloudWatch. Designed to support containerized applications with automated deployment and monitoring.",
+    challenges: [
+      {
+        description: "Coordinating infrastructure modules across multiple environments",
+        solution:
+          "Used Terraform workspaces and modular variables to manage staging and production configurations",
+        impact: "Enabled safer deployments and easier environment management",
+      },
+    ],
+    lessonsLearned: [
+      "The value of versioned infrastructure modules",
+      "How to automate AWS deployments with CodePipeline",
+    ],
+    tags: [
+      {
+        name: "terraform",
+        color: "blue-text-gradient",
+        icon: "cloud",
+      },
+      {
+        name: "aws",
+        color: "cyan-text-gradient",
+        icon: "cloud",
+      },
+      {
+        name: "cicd",
+        color: "purple-text-gradient",
+        icon: "rocket",
+      },
+    ],
+  },
+  {
+    id: 7,
+    title: "Blog Admin Dashboard",
+    description:
+      "A modern admin dashboard for managing blog content, newsletter subscribers, and editorial workflows with rich text editing and automation.",
+    image: "/project-placeholder.svg",
+    category: "Web Application",
+    liveUrl: "https://github.com/TanyaMushonga/tanyas-blog-admin",
+    githubUrl: "https://github.com/TanyaMushonga/tanyas-blog-admin",
+    techStack: [
+      "Next.js 15",
+      "TypeScript",
+      "Tiptap",
+      "Trigger.dev",
+      "Resend",
+      "Prisma",
+    ],
+    status: "Open Source",
+    teamSize: "Solo Project",
+    developmentPeriod: "2025",
+    metrics: {
+      automation: "Newsletter workflow automated",
+      editor: "Rich-content blog editor",
+      security: "Secure authenticated admin access",
+    },
+    keyFeatures: [
+      "Rich text content editor with Tiptap",
+      "Newsletter subscriber management",
+      "Secure Lucia authentication",
+      "Automated emails via Trigger.dev and Resend",
+    ],
+    implementation: [
+      {
+        title: "Admin Content Workflow",
+        description:
+          "Built an editor-first admin experience for publishing and managing technical blog content.",
+        technologies: ["Next.js", "Tiptap", "Prisma"],
+        achievements: [
+          "Delivered a polished editorial interface",
+          "Integrated newsletter automation into admin workflows",
+        ],
+      },
+      {
+        title: "Subscriber Automation",
+        description:
+          "Configured Trigger.dev and Resend to send emails and manage blog subscribers from the admin dashboard.",
+        technologies: ["Trigger.dev", "Resend"],
+      },
+    ],
+    architecture:
+      "Admin dashboard with Next.js frontend, Prisma ORM, secure auth, and email automation integrations for managing blog posts and subscribers.",
+    challenges: [
+      {
+        description: "Balancing editorial workflows with security",
+        solution:
+          "Implemented role-based access and secure session management for admin users",
+        impact: "Protected content while preserving publishing speed",
+      },
+    ],
+    lessonsLearned: [
+      "How to build admin experiences that feel fast and secure",
+      "The value of automating newsletter workflows",
+    ],
+    tags: [
+      {
+        name: "next.js",
+        color: "blue-text-gradient",
+        icon: "react",
+      },
+      {
+        name: "tiptap",
+        color: "pink-text-gradient",
+        icon: "pencil",
+      },
+      {
+        name: "trigger.dev",
+        color: "cyan-text-gradient",
+        icon: "sparkles",
+      },
+    ],
+  },
+  {
+    id: 8,
+    title: "Workstation Orchestrator",
+    description:
+      "A cross-platform bootstrapper that automates workstation setup for developers, DevOps engineers, and security professionals on Linux, macOS, and Windows.",
+    image: "/project-placeholder.svg",
+    category: "Infrastructure",
+    liveUrl: "https://github.com/TanyaMushonga/workstation-orchestrator",
+    githubUrl: "https://github.com/TanyaMushonga/workstation-orchestrator",
+    techStack: [
+      "Shell scripting",
+      "Automation",
+      "Cross-platform", 
+      "Developer tooling",
+      "Git",
+    ],
+    status: "Open Source",
+    teamSize: "Solo Project",
+    developmentPeriod: "2024-2025",
+    metrics: {
+      platforms: "Linux, macOS, Windows",
+      automation: "Developer environment bootstrapper",
+      tools: "Security and productivity tooling",
+    },
+    keyFeatures: [
+      "Automated workstation provisioning",
+      "Cross-platform compatibility",
+      "Developer tooling orchestration",
+      "Secure bootstrap workflows",
+    ],
+    implementation: [
+      {
+        title: "Platform Detection",
+        description:
+          "Built shell scripts to detect the host OS and install the right tooling for each environment.",
+        technologies: ["Shell", "Bash", "POSIX"],
+      },
+      {
+        title: "Tooling Automation",
+        description:
+          "Automated the installation of developer and security tools for consistent workstation setup.",
+        technologies: ["Shell", "Git"],
+      },
+    ],
+    architecture:
+      "Shell-based orchestration with modular install scripts, platform detection, and environment setup routines to quickly bootstrap developer workstations.",
+    challenges: [
+      {
+        description: "Managing differences across operating systems",
+        solution:
+          "Used conditionals and modular scripts to support Linux, macOS, and Windows reliably",
+        impact: "Reduced onboarding time for new development environments",
+      },
+    ],
+    lessonsLearned: [
+      "The value of repeatable developer environments",
+      "How to write maintainable cross-platform shell automation",
+    ],
+    tags: [
+      {
+        name: "automation",
+        color: "green-text-gradient",
+        icon: "terminal",
+      },
+      {
+        name: "shell",
+        color: "orange-text-gradient",
+        icon: "code",
+      },
+      {
+        name: "cross-platform",
+        color: "purple-text-gradient",
+        icon: "device-mobile",
+      },
+    ],
+  },
+
+ 
+  {
+    id: 9,
+    title: "SkyMarshal API",
+    description:
+      "A Django REST API for intelligent aerial traffic monitoring, featuring vehicle detection, ALPR, drone fleet control, and real-time compliance workflows.",
+    image: "/project-placeholder.svg",
+    category: "API",
+    liveUrl: "https://github.com/TanyaMushonga/skymarshal-api",
+    githubUrl: "https://github.com/TanyaMushonga/skymarshal-api",
+    techStack: [
+      "Django REST Framework",
+      "Python",
+      "YOLOv8",
+      "WebSockets",
+      "PostGIS",
+      "Kafka",
+    ],
+    status: "Open Source",
+    teamSize: "Solo Project",
+    developmentPeriod: "2024-2025",
+    metrics: {
+      analytics: "Real-time vehicle and speed monitoring",
+      drones: "Fleet management and telemetry",
+      security: "Role-based API authentication",
+    },
+    keyFeatures: [
+      "Vehicle detection and tracking for aerial feeds",
+      "Automatic License Plate Recognition (ALPR)",
+      "Real-time drone fleet telemetry",
+      "Secure API authentication and officer roles",
+    ],
+    implementation: [
+      {
+        title: "Traffic Monitoring API",
+        description:
+          "Created REST endpoints for vehicle tracking, speed estimation, and enforcement workflows.",
+        technologies: ["Django REST Framework", "Python"],
+        achievements: [
+          "Built API key authentication for ESP32-CAM devices",
+          "Created endpoints for incident and violation processing",
+        ],
+      },
+      {
+        title: "Computer Vision Integration",
+        description:
+          "Integrated YOLOv8 and Kafka for high-throughput vehicle detection and event streaming.",
+        technologies: ["YOLOv8", "Kafka", "WebSockets"],
+      },
+    ],
+    architecture:
+      "Django REST API connected to YOLOv8 vision pipelines, Kafka event streams, and PostGIS-backed telemetry tracking for aerial traffic operations.",
+    challenges: [
+      {
+        description: "Processing high-volume vision events while keeping APIs responsive",
+        solution:
+          "Separated detection pipelines from REST request handling and used event queues",
+        impact: "Maintained stable API performance under load",
+      },
+    ],
+    lessonsLearned: [
+      "The power of separating vision pipelines from API traffic",
+      "How to secure edge device access with API keys",
+    ],
+    tags: [
+      {
+        name: "django-rest-framework",
+        color: "green-text-gradient",
+        icon: "server",
+      },
+      {
+        name: "yolo",
+        color: "orange-text-gradient",
+        icon: "cpu",
+      },
+      {
+        name: "postgresql",
+        color: "pink-text-gradient",
+        icon: "database",
+      },
+    ],
+  },
+
+ ];
