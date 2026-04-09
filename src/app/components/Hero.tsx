@@ -8,13 +8,12 @@ import {
 import { useEffect, useState } from "react";
 
 const roles = [
-  "Frontend Engineer",
-  "Mobile Specialist",
-  "DevOps Engineer",
-  "Full Stack Developer",
-  "AWS expert",
-  "React Native Developer",
-  "Next.js Architect",
+  "Full-Stack & Cloud Engineer",
+  "End-to-End Platform Builder",
+  "Django REST & AWS Architect",
+  "Software Engineer",
+  "React Native · Next.js · Node.js",
+  "Cloud Infrastructure Specialist",
 ];
 
 const Hero = () => {
@@ -137,13 +136,14 @@ const Hero = () => {
           variants={itemVariants}
           className="text-xl md:text-2xl text-gray-400 max-w-4xl mx-auto mb-12 leading-relaxed"
         >
-          Building pixel-perfect web experiences with Next.js and cross-platform
-          mobile apps with React Native.
+          I build production systems end-to-end — from React Native mobile apps
+          and Next.js frontends to Django REST APIs, PostgreSQL data stores, and
+          AWS cloud infrastructure.
         </motion.p>
 
         <motion.div
           variants={itemVariants}
-          className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16"
+          className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-6"
         >
           <motion.button
             whileHover={{
@@ -181,13 +181,22 @@ const Hero = () => {
 
         <motion.div
           variants={itemVariants}
+          className="flex flex-wrap justify-center gap-3 mb-16"
+        >
+          <span className="px-4 py-2 rounded-full bg-white/10 text-sm text-gray-200 border border-white/10">
+            Open to: Full-Stack · Cloud · Mobile · Remote/Hybrid
+          </span>
+        </motion.div>
+
+        <motion.div
+          variants={itemVariants}
           className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto mb-16"
         >
           {[
-            { number: "6+", label: "Projects Completed" },
-            { number: "2+", label: "Years Experience" },
-            { number: "8+", label: "Technologies Mastered" },
-            { number: "100%", label: "Client Satisfaction" },
+            { number: "110", label: "AWS Cloud Engineering Modules Authored" },
+            { number: "98/100", label: "Lighthouse Performance Score" },
+            { number: "2", label: "Peer-Reviewed Research Papers" },
+            { number: "70%", label: "Crash Rate Reduction on Target Devices" },
           ].map((stat, index) => (
             <motion.div
               key={index}
