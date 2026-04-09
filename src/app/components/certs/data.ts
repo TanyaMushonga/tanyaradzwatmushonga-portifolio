@@ -25,28 +25,6 @@ export const certifications = [
   },
   {
     id: 2,
-    title: "Multicloud Network Associate",
-    organization: "Aviatrix",
-    category: "cloud",
-    status: "Active",
-    issueDate: "September 2025",
-    expiryDate: "September 2028",
-    credentialId: null,
-    description:
-      "Certification focused on multicloud networking fundamentals, cloud application connectivity, and AWS-based network architectures.",
-    skills: [
-      "AWS",
-      "Cloud Networking",
-      "Multicloud Architecture",
-      "Cloud Applications",
-    ],
-    score: null,
-    certificateUrl: "#",
-    verifyUrl: "https://www.credly.com/badges/640dba63-8a63-4067-9204-3927cdf2e177/linked_in_profile",
-    logo: "",
-  },
-  {
-    id: 3,
     title:
       "Oracle Cloud Infrastructure 2025 Certified Multicloud Architect Professional",
     organization: "Oracle",
@@ -68,6 +46,28 @@ export const certifications = [
     score: null,
     certificateUrl: "#",
     verifyUrl: "https://catalog-education.oracle.com/ords/certview/sharebadge?id=7D9860D40DE31AE8986446F9DA817517B578E18802D734B39C5E6D52F2C0B134",
+    logo: "",
+  },
+  {
+    id: 3,
+    title: "Multicloud Network Associate",
+    organization: "Aviatrix",
+    category: "cloud",
+    status: "Active",
+    issueDate: "September 2025",
+    expiryDate: "September 2028",
+    credentialId: null,
+    description:
+      "Certification focused on multicloud networking fundamentals, cloud application connectivity, and AWS-based network architectures.",
+    skills: [
+      "AWS",
+      "Cloud Networking",
+      "Multicloud Architecture",
+      "Cloud Applications",
+    ],
+    score: null,
+    certificateUrl: "#",
+    verifyUrl: "https://www.credly.com/badges/640dba63-8a63-4067-9204-3927cdf2e177/linked_in_profile",
     logo: "",
   },
   {
