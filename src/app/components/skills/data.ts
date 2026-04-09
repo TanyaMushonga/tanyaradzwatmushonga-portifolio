@@ -46,7 +46,7 @@ export const skills = [
     ],
   },
   {
-    category: "Backend & DevOps for Frontend Efficiency",
+    category: "Backend & Infrastructure",
     icon: Server,
     items: [
       {
@@ -75,7 +75,7 @@ export const skills = [
         level: 75,
         experience: "1+ years",
         icon: "☁️",
-        related: ["S3", "EC2", "Amplify", "Lambda"],
+        related: ["S3", "EC2", "Lambda", "Cloud Architecture"],
       },
     ],
   },
