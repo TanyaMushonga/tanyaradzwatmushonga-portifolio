@@ -169,7 +169,7 @@ const Hero = () => {
             onClick={() =>
               window.open(
                 "https://drive.google.com/file/d/1paG-n4qLToDo1FXV9ZyUhizv3msFoaJ-/view?usp=sharing",
-                "_blank"
+                "_blank",
               )
             }
             className="glass-effect px-8 py-4 rounded-full text-white font-semibold text-lg border border-primary-500/30 hover:border-primary-500/60 transition-all duration-300"
