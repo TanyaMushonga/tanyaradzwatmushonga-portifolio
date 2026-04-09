@@ -2,13 +2,12 @@
 import React from "react";
 import { motion } from "framer-motion";
 import {
-  EyeIcon,
-  CodeBracketIcon,
   ChartBarIcon,
   ClockIcon,
   UserGroupIcon,
 } from "@heroicons/react/24/outline";
 import { Project } from "./types";
+import { getTechIcon } from "./techIcons";
 
 interface ProjectCardProps {
   project: Project;
@@ -55,20 +54,26 @@ const ProjectCard = ({ project, index, onSelect }: ProjectCardProps) => {
           {project.description}
         </p>
 
-        <div className="flex flex-wrap gap-2 mb-4">
-          {project.techStack.slice(0, 3).map((tech, i) => (
-            <span
-              key={i}
-              className="bg-dark-800 px-2 py-1 rounded-md text-xs text-gray-300"
-            >
-              {tech}
-            </span>
-          ))}
-          {project.techStack.length > 3 && (
-            <span className="bg-dark-800 px-2 py-1 rounded-md text-xs text-gray-400">
-              +{project.techStack.length - 3} more
-            </span>
-          )}
+        <div className="overflow-hidden py-2">
+          <motion.div
+            initial={{ x: 0 }}
+            animate={{ x: [0, -16, 0] }}
+            transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+            className="flex gap-3 min-w-max"
+          >
+            {project.techStack.map((tech, index) => {
+              const Icon = getTechIcon(tech);
+              return (
+                <div
+                  key={index}
+                  className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-dark-800 px-3 py-2 text-xs text-gray-300 whitespace-nowrap"
+                >
+                  <Icon className="w-4 h-4 text-primary-400" />
+                  {tech}
+                </div>
+              );
+            })}
+          </motion.div>
         </div>
 
         <div className="flex items-center justify-between text-xs text-gray-500">
