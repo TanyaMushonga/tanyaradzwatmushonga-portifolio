@@ -11,7 +11,13 @@ const Projects = () => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [filter, setFilter] = useState("all");
 
-  const categories = ["all", "Web Application", "Mobile Application", "api"];
+  const categories = [
+    "all",
+    "Web Application",
+    "Mobile Application",
+    "API",
+    "Infrastructure",
+  ];
 
   const filteredProjects = React.useMemo(() => {
     const result =
