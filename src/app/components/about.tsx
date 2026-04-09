@@ -26,14 +26,18 @@ const About = () => {
             <div className="space-y-6 text-gray-300 text-lg leading-relaxed">
               <p>
                 I build production systems end-to-end — from React Native mobile
-                apps and Next.js frontends, through Django REST and Express APIs,
-                to AWS and OCI cloud infrastructure. My focus is on creating
-                systems that deliver business value, not just polished user
-                interfaces.
+                apps and Next.js frontends, through Django REST and Express
+                APIs, to AWS and OCI cloud infrastructure. My focus is on
+                creating systems that deliver business value, not just polished
+                user interfaces.
               </p>
 
               <p>
-                I bridge the gap between design and engineering, ensuring that pixel-perfect UIs are backed by robust, scalable architecture. My &quot;T-shaped&quot; skillset means I can dive deep into React Native performance while understanding the backend implications of every frontend decision.
+                I bridge the gap between design and engineering, ensuring that
+                pixel-perfect UIs are backed by robust, scalable architecture.
+                My &quot;T-shaped&quot; skillset means I can dive deep into
+                React Native performance while understanding the backend
+                implications of every frontend decision.
               </p>
 
               <p>
@@ -73,7 +77,6 @@ const About = () => {
                 width={400}
                 height={400}
               />
-
 
               <motion.div
                 animate={{ y: [0, -80, 0] }}
