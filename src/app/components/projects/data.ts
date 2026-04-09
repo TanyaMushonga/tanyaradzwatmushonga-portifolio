@@ -204,7 +204,6 @@ export const projects = [
       },
     ],
   },
-
   {
     id: 3,
     title: "Technical Blog",
@@ -213,37 +212,43 @@ export const projects = [
     image: "/thecypherhub.png",
     category: "Web Application",
     liveUrl: "https://blog.tanyaradzwatmushonga.me/",
-    githubUrl: "",
+    githubUrl: "https://github.com/TanyaMushonga/tanyas-blog",
     techStack: [
-      "Next.js 13 (App Router)",
-      "PostgreSQL (Vercel)",
+      "Next.js 15",
+      "React 19",
+      "TypeScript",
+      "PostgreSQL",
       "Prisma ORM",
-      "Resend for Emails",
+      "Tailwind CSS v4",
+      "Resend",
     ],
     status: "Live (Actively Maintained)",
     teamSize: "Solo Project",
     developmentPeriod: "December 2024 - March 2025",
     metrics: {
-      articles: "16 technical articles",
+      articles: "16+ technical articles",
       subscribers: "100+ newsletter recipients",
       traffic: "1000+ monthly page views",
       performance: "98 Lighthouse score",
     },
     keyFeatures: [
-      "Syntax-highlighted code blocks",
-      "Newsletter subscription system",
+      "Syntax-highlighted code blocks with copy functionality",
+      "Newsletter subscription system with Resend integration",
       "Article search and tagging",
       "Reading time estimation",
+      "SEO optimization with schema.org markup",
+      "Responsive image handling with blur-up placeholders",
     ],
     implementation: [
       {
         title: "Content Management System",
         description:
-          "Built a custom CMS workflow allowing articles to be written . Implemented incremental static regeneration for fast content updates.",
-        technologies: ["TipTap react", "Next Js"],
+          "Built a custom CMS workflow allowing articles to be written and published seamlessly. Implemented incremental static regeneration for fast content updates with automatic schema.org markup generation.",
+        technologies: ["TipTap React", "Next.js ISR", "Markdown"],
         challenges: [
           "Implemented code snippet copying functionality",
           "Created responsive image handling with blur-up placeholders",
+          "Automated SEO best practices implementation",
         ],
       },
       {
@@ -255,15 +260,28 @@ export const projects = [
           "98/100 Lighthouse performance score",
           "1.2s average page load time",
           "30% smaller bundle size than industry average",
+          "First-page rankings for several technical keywords",
+        ],
+      },
+      {
+        title: "Newsletter System",
+        description:
+          "Integrated Resend with React Email templates for automated newsletter delivery with 65% open rate.",
+        technologies: ["Resend", "React Email", "Email Automation"],
+        achievements: [
+          "65% open rate for technical content",
+          "Automated subscriber management",
+          "Rich email templates with React",
         ],
       },
     ],
     architecture:
       "Jamstack architecture with:\n" +
-      "- Next.js for frontend\n" +
-      "- PostgreSQL for articles\n" +
+      "- Next.js 15 (App Router) for frontend\n" +
+      "- PostgreSQL for article storage\n" +
       "- Prisma as ORM\n" +
       "- Vercel Edge Functions for dynamic features\n" +
+      "- Resend for email delivery\n" +
       "All content statically generated with ISR for updates",
     challenges: [
       {
@@ -276,6 +294,11 @@ export const projects = [
         solution: "Integrated Resend with React Email templates",
         impact: "Maintained 65% open rate for technical content",
       },
+    ],
+    lessonsLearned: [
+      "Importance of performance optimization in content platforms",
+      "Value of automated SEO implementation",
+      "Best practices for newsletter engagement",
     ],
     tags: [
       {
@@ -298,6 +321,7 @@ export const projects = [
       "Add interactive code playgrounds",
       "Implement user accounts with saved articles",
       "Develop podcast integration",
+      "Add comment system with moderation",
     ],
   },
   {
@@ -345,7 +369,7 @@ export const projects = [
         achievements: [
           "Reduced event search latency by 40% through query optimization",
           "Implemented caching for frequently accessed event data",
-          "Developed responsive UI",
+          "Developed responsive UI that works on low-end devices",
         ],
       },
       {
@@ -415,9 +439,10 @@ export const projects = [
     image: "/ttl.png",
     category: "Web Application",
     liveUrl: "https://www.ttlbusinessdiagnostic.com/",
-    githubUrl: "",
+    githubUrl: "https://github.com/TanyaMushonga/ttl-web-client",
     techStack: [
-      "Next.js 13 (App Router)",
+      "Next.js 13",
+      "TypeScript",
       "PostgreSQL 14",
       "Prisma ORM",
       "Tailwind CSS",
@@ -429,15 +454,16 @@ export const projects = [
     developmentPeriod: "Jan 2025 - Present",
     metrics: {
       activeUsers: "50+ consulting professionals",
-
       reportsGenerated: "10+ monthly",
+      adoption: "Growing user base with positive feedback",
     },
     keyFeatures: [
       "Customizable reporting templates",
-      "Role-based access control",
+      "Role-based access control (RBAC)",
       "Client progress dashboards",
       "Low-bandwidth optimization",
       "PDF report generation",
+      "Task management with drag-and-drop",
     ],
     implementation: [
       {
@@ -454,8 +480,8 @@ export const projects = [
       {
         title: "Reporting Engine",
         description:
-          "Created dynamic report generator  with 15+ template types integrated with CHATGPT for deep analytics. Integrated Chart.js for data visualization and PDF rendering for client deliverables.",
-        technologies: ["Chart.js", "PDFKit", "Template Engine"],
+          "Created dynamic report generator with 15+ template types integrated with ChatGPT for deep analytics. Integrated Chart.js for data visualization and PDF rendering for client deliverables.",
+        technologies: ["Chart.js", "PDFKit", "Template Engine", "ChatGPT"],
         challenges: [
           "Handled large dataset visualization",
           "Implemented caching for frequent reports",
@@ -485,6 +511,7 @@ export const projects = [
     futureImprovements: [
       "Implement client portal",
       "Develop mobile companion app",
+      "Add collaborative whiteboarding features",
     ],
     tags: [
       {
@@ -557,7 +584,8 @@ export const projects = [
       "AWS infrastructure with Terraform-managed VPC, ECS Fargate services, CodePipeline, CodeBuild, and CloudWatch. Designed to support containerized applications with automated deployment and monitoring.",
     challenges: [
       {
-        description: "Coordinating infrastructure modules across multiple environments",
+        description:
+          "Coordinating infrastructure modules across multiple environments",
         solution:
           "Used Terraform workspaces and modular variables to manage staging and production configurations",
         impact: "Enabled safer deployments and easier environment management",
@@ -566,6 +594,7 @@ export const projects = [
     lessonsLearned: [
       "The value of versioned infrastructure modules",
       "How to automate AWS deployments with CodePipeline",
+      "Best practices for multi-environment Terraform configurations",
     ],
     tags: [
       {
@@ -600,7 +629,8 @@ export const projects = [
       "Tiptap",
       "Trigger.dev",
       "Resend",
-      "Prisma",
+      "Prisma ORM",
+      "PostgreSQL",
     ],
     status: "Open Source",
     teamSize: "Solo Project",
@@ -615,27 +645,29 @@ export const projects = [
       "Newsletter subscriber management",
       "Secure Lucia authentication",
       "Automated emails via Trigger.dev and Resend",
+      "Draft and publish workflow",
     ],
     implementation: [
       {
         title: "Admin Content Workflow",
         description:
-          "Built an editor-first admin experience for publishing and managing technical blog content.",
-        technologies: ["Next.js", "Tiptap", "Prisma"],
+          "Built an editor-first admin experience for publishing and managing technical blog content with secure authentication.",
+        technologies: ["Next.js", "Tiptap", "Prisma", "Lucia Auth"],
         achievements: [
           "Delivered a polished editorial interface",
           "Integrated newsletter automation into admin workflows",
+          "Implemented secure session management",
         ],
       },
       {
         title: "Subscriber Automation",
         description:
-          "Configured Trigger.dev and Resend to send emails and manage blog subscribers from the admin dashboard.",
-        technologies: ["Trigger.dev", "Resend"],
+          "Configured Trigger.dev and Resend to send emails and manage blog subscribers from the admin dashboard with advanced email templates.",
+        technologies: ["Trigger.dev", "Resend", "React Email"],
       },
     ],
     architecture:
-      "Admin dashboard with Next.js frontend, Prisma ORM, secure auth, and email automation integrations for managing blog posts and subscribers.",
+      "Admin dashboard with Next.js frontend, Prisma ORM, secure Lucia authentication, and email automation integrations for managing blog posts and subscribers.",
     challenges: [
       {
         description: "Balancing editorial workflows with security",
@@ -647,6 +679,7 @@ export const projects = [
     lessonsLearned: [
       "How to build admin experiences that feel fast and secure",
       "The value of automating newsletter workflows",
+      "Best practices for rich text editing in Next.js",
     ],
     tags: [
       {
@@ -675,13 +708,7 @@ export const projects = [
     category: "Infrastructure",
     liveUrl: "https://github.com/TanyaMushonga/workstation-orchestrator",
     githubUrl: "https://github.com/TanyaMushonga/workstation-orchestrator",
-    techStack: [
-      "Shell scripting",
-      "Automation",
-      "Cross-platform", 
-      "Developer tooling",
-      "Git",
-    ],
+    techStack: ["Shell scripting", "Bash", "POSIX", "Git", "Cross-platform"],
     status: "Open Source",
     teamSize: "Solo Project",
     developmentPeriod: "2024-2025",
@@ -695,18 +722,19 @@ export const projects = [
       "Cross-platform compatibility",
       "Developer tooling orchestration",
       "Secure bootstrap workflows",
+      "Modular installation scripts",
     ],
     implementation: [
       {
         title: "Platform Detection",
         description:
-          "Built shell scripts to detect the host OS and install the right tooling for each environment.",
+          "Built shell scripts to detect the host OS and install the right tooling for each environment with intelligent fallbacks.",
         technologies: ["Shell", "Bash", "POSIX"],
       },
       {
         title: "Tooling Automation",
         description:
-          "Automated the installation of developer and security tools for consistent workstation setup.",
+          "Automated the installation of developer and security tools for consistent workstation setup across platforms.",
         technologies: ["Shell", "Git"],
       },
     ],
@@ -723,6 +751,7 @@ export const projects = [
     lessonsLearned: [
       "The value of repeatable developer environments",
       "How to write maintainable cross-platform shell automation",
+      "Best practices for handling OS-specific package managers",
     ],
     tags: [
       {
@@ -742,8 +771,6 @@ export const projects = [
       },
     ],
   },
-
- 
   {
     id: 9,
     title: "SkyMarshal API",
@@ -760,6 +787,7 @@ export const projects = [
       "WebSockets",
       "PostGIS",
       "Kafka",
+      "PostgreSQL",
     ],
     status: "Open Source",
     teamSize: "Solo Project",
@@ -774,30 +802,38 @@ export const projects = [
       "Automatic License Plate Recognition (ALPR)",
       "Real-time drone fleet telemetry",
       "Secure API authentication and officer roles",
+      "High-throughput event processing",
     ],
     implementation: [
       {
         title: "Traffic Monitoring API",
         description:
-          "Created REST endpoints for vehicle tracking, speed estimation, and enforcement workflows.",
+          "Created REST endpoints for vehicle tracking, speed estimation, and enforcement workflows with comprehensive logging.",
         technologies: ["Django REST Framework", "Python"],
         achievements: [
           "Built API key authentication for ESP32-CAM devices",
           "Created endpoints for incident and violation processing",
+          "Implemented comprehensive request logging and analytics",
         ],
       },
       {
         title: "Computer Vision Integration",
         description:
-          "Integrated YOLOv8 and Kafka for high-throughput vehicle detection and event streaming.",
-        technologies: ["YOLOv8", "Kafka", "WebSockets"],
+          "Integrated YOLOv8 and Kafka for high-throughput vehicle detection and event streaming with real-time processing.",
+        technologies: ["YOLOv8", "Kafka", "WebSockets", "OpenCV"],
+        achievements: [
+          "Real-time vehicle detection and classification",
+          "Event streaming for downstream processing",
+          "Scalable detection pipeline",
+        ],
       },
     ],
     architecture:
       "Django REST API connected to YOLOv8 vision pipelines, Kafka event streams, and PostGIS-backed telemetry tracking for aerial traffic operations.",
     challenges: [
       {
-        description: "Processing high-volume vision events while keeping APIs responsive",
+        description:
+          "Processing high-volume vision events while keeping APIs responsive",
         solution:
           "Separated detection pipelines from REST request handling and used event queues",
         impact: "Maintained stable API performance under load",
@@ -806,6 +842,12 @@ export const projects = [
     lessonsLearned: [
       "The power of separating vision pipelines from API traffic",
       "How to secure edge device access with API keys",
+      "Best practices for event-driven architectures",
+    ],
+    futureImprovements: [
+      "Add vehicle re-identification across frames",
+      "Implement traffic flow analytics",
+      "Add alert notification system",
     ],
     tags: [
       {
@@ -825,5 +867,6 @@ export const projects = [
       },
     ],
   },
-
- ];
+  
+  
+];
