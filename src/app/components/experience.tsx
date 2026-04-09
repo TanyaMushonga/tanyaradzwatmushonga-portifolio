@@ -12,7 +12,7 @@ import {
 const experiences = [
   {
     id: 1,
-    title: "Frontend & Cloud Engineer",
+    title: "Frontend Developer",
     company: "Lanitech360",
     location: "Remote",
     type: "Contract",
@@ -37,7 +37,7 @@ const experiences = [
   },
   {
     id: 2,
-    title: "Full Stack Engineer",
+    title: "Full Stack Developer",
     company: "The Transformation Legacy",
     location: "Remote",
     type: "Part-time",
