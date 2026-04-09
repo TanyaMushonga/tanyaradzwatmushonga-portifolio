@@ -49,7 +49,6 @@ const Testimonials = () => {
       project: "ZimTickets",
       contact: {
         email: "tatenda.kodzai@mviyo.com",
-        phone: "+26378425696",
         linkedin: "https://www.linkedin.com/in/tatenda-kodzai/",
       },
       workRelation: "Manager",
@@ -67,7 +66,6 @@ const Testimonials = () => {
       project: "Safi Platform",
       contact: {
         email: "wyne.chitamba@mviyo.com",
-        phone: "+263784331639",
         linkedin: "https://www.linkedin.com/in/wyne-c-b16b54114/",
       },
       workRelation: "Colleague",
