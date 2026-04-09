@@ -8,6 +8,8 @@ import Skills from "./components/skills/Skills";
 import Testimonials from "./components/testimonials";
 import About from "./components/about";
 import Awards from "./components/awards/awards";
+import Gallery from "./components/Gallery";
+import Writing from "./components/writing";
 
 export default function Home() {
   return (
@@ -15,11 +17,13 @@ export default function Home() {
       <Hero />
       <About />
       <Projects />
+      <Writing />
       <Skills />
       <Experience />
       <Research />
       <Certifications />
       <Awards />
+      <Gallery />
       <Testimonials />
       <Contact />
     </main>
