@@ -206,7 +206,7 @@ const Writing = () => {
                 <div className="space-y-4">
                   {loading ? (
                     <div className="space-y-3">
-                      {[...Array(3)].map((index) => (
+                      {[...Array(3)].map((_, index) => (
                         <div
                           key={index}
                           className="h-20 rounded-2xl bg-dark-800 animate-pulse"
