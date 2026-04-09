@@ -1,10 +1,14 @@
 "use client";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowTopRightOnSquareIcon, BookOpenIcon } from "@heroicons/react/24/outline";
+import {
+  ArrowTopRightOnSquareIcon,
+  BookOpenIcon,
+} from "@heroicons/react/24/outline";
 
 const API_BASE =
-  process.env.NEXT_PUBLIC_API_URL || "https://console.tanyaradzwatmushonga.me/api";
+  process.env.NEXT_PUBLIC_API_URL ||
+  "https://console.tanyaradzwatmushonga.me/api";
 
 interface Article {
   title: string;
@@ -67,8 +71,9 @@ const Writing = () => {
         const collectionsData = await collectionsRes.json();
 
         const latestArticles: Article[] = articlesData.blogs || [];
-        const latestCollections: Collection[] =
-          Array.isArray(collectionsData) ? collectionsData : collectionsData.collections || [];
+        const latestCollections: Collection[] = Array.isArray(collectionsData)
+          ? collectionsData
+          : collectionsData.collections || [];
 
         setArticles(latestArticles.slice(0, 4));
         setCollections(latestCollections.slice(0, 3));
@@ -99,8 +104,8 @@ const Writing = () => {
             <span className="gradient-text">Writing & Thought Leadership</span>
           </h2>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            Live highlights from my technical blog, showcasing the latest series,
-            deep-dive articles, and platform engineering insights.
+            Live highlights from my technical blog, showcasing the latest
+            series, deep-dive articles, and platform engineering insights.
           </p>
         </motion.div>
 
@@ -143,8 +148,15 @@ const Writing = () => {
                         {latestArticle.description}
                       </p>
                       <div className="flex flex-wrap gap-4 text-sm text-gray-400 items-center">
-                        {latestArticle.readTime && <span>{latestArticle.readTime} read</span>}
-                        <span>{formatDate(latestArticle.publishedAt || latestArticle.updatedAt)}</span>
+                        {latestArticle.readTime && (
+                          <span>{latestArticle.readTime} read</span>
+                        )}
+                        <span>
+                          {formatDate(
+                            latestArticle.publishedAt ||
+                              latestArticle.updatedAt,
+                          )}
+                        </span>
                       </div>
                     </a>
                   ) : (
@@ -203,9 +215,12 @@ const Writing = () => {
                     </div>
                   ) : collections.length > 0 ? (
                     collections.map((collection) => {
-                      const collectionName = collection.name || collection.title || "Series";
+                      const collectionName =
+                        collection.name || collection.title || "Series";
                       const modulesCount = collection.articles?.length ?? 0;
-                      const publishedDate = formatDate(collection.createdAt || collection.updatedAt);
+                      const publishedDate = formatDate(
+                        collection.createdAt || collection.updatedAt,
+                      );
 
                       return (
                         <a
@@ -219,7 +234,10 @@ const Writing = () => {
                             {collectionName}
                           </div>
                           <div className="flex items-center justify-between gap-4 mb-3 text-xs uppercase tracking-[0.24em] text-primary-400 font-semibold">
-                            <span>{modulesCount} module{modulesCount === 1 ? "" : "s"}</span>
+                            <span>
+                              {modulesCount} module
+                              {modulesCount === 1 ? "" : "s"}
+                            </span>
                             {publishedDate && <span>{publishedDate}</span>}
                           </div>
                           <p className="text-gray-300 text-sm line-clamp-2">
@@ -229,14 +247,18 @@ const Writing = () => {
                       );
                     })
                   ) : (
-                    <div className="text-gray-400">No series available yet.</div>
+                    <div className="text-gray-400">
+                      No series available yet.
+                    </div>
                   )}
                 </div>
               </div>
 
               <div className="rounded-3xl border border-white/10 bg-dark-900 p-8">
                 <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-xl font-semibold text-white">Blog Home</h3>
+                  <h3 className="text-xl font-semibold text-white">
+                    Blog Home
+                  </h3>
                   <span className="text-sm text-primary-400">console</span>
                 </div>
                 <p className="text-gray-400 mb-6">
