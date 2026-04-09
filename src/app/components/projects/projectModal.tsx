@@ -18,6 +18,7 @@ import {
 } from "@heroicons/react/24/outline";
 
 import { Project } from "./types";
+import { getTechIcon } from "./techIcons";
 
 interface ProjectModalProps {
   project: Project | null;
@@ -258,15 +259,26 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
                       <DocumentTextIcon className="w-5 h-5 text-accent-400 mr-2" />
                       Tech Stack
                     </h3>
-                    <div className="flex flex-wrap gap-2">
-                      {project.techStack.map((tech, index) => (
-                        <span
-                          key={index}
-                          className="bg-dark-800 px-3 py-1 rounded-md text-sm text-gray-300"
-                        >
-                          {tech}
-                        </span>
-                      ))}
+                    <div className="overflow-x-auto py-2">
+                      <motion.div
+                        initial={{ x: 0 }}
+                        animate={{ x: [0, -8, 0] }}
+                        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+                        className="inline-flex gap-2 min-w-max"
+                      >
+                        {project.techStack.map((tech, index) => {
+                          const Icon = getTechIcon(tech);
+                          return (
+                            <div
+                              key={index}
+                              className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-dark-800 px-3 py-2 text-sm text-gray-300 whitespace-nowrap"
+                            >
+                              <Icon className="w-4 h-4 text-primary-400" />
+                              {tech}
+                            </div>
+                          );
+                        })}
+                      </motion.div>
                     </div>
                   </div>
 
