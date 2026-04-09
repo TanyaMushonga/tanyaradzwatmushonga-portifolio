@@ -1,7 +1,4 @@
-import {
-  Server,
-  Layers,
-} from "lucide-react";
+import { Server, Layers } from "lucide-react";
 
 export const skills = [
   {
