@@ -33,7 +33,7 @@ interface Testimonial {
 
 const Testimonials = () => {
   const [activeTestimonial, setActiveTestimonial] = useState<number | null>(
-    null
+    null,
   );
 
   const testimonials: Testimonial[] = [
@@ -190,7 +190,7 @@ const Testimonials = () => {
                     </div>
                     <div
                       className={`px-2 py-1 rounded-full border text-xs ${getRelationColor(
-                        testimonial.workRelation
+                        testimonial.workRelation,
                       )}`}
                     >
                       {testimonial.workRelation}
@@ -286,7 +286,7 @@ const Testimonials = () => {
                       setActiveTestimonial(
                         activeTestimonial === testimonial.id
                           ? null
-                          : testimonial.id
+                          : testimonial.id,
                       )
                     }
                     className="w-full mt-3 py-2 text-xs text-primary-400 hover:text-primary-300 transition-colors border-t border-white/5"
