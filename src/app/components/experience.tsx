@@ -51,13 +51,7 @@ const experiences = [
       "Deployed the platform with AWS services for production stability.",
       "Integrated ChatGPT API for advanced assessment workflows.",
     ],
-    technologies: [
-      "Next.js",
-      "PostgreSQL",
-      "Node.js",
-      "AWS",
-      "ChatGPT API",
-    ],
+    technologies: ["Next.js", "PostgreSQL", "Node.js", "AWS", "ChatGPT API"],
   },
   {
     id: 3,
@@ -105,8 +99,8 @@ const Experience = () => {
     // Initial check
     handleResize();
 
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const maxIndex = Math.ceil(experiences.length / itemsPerView) - 1;
@@ -149,7 +143,7 @@ const Experience = () => {
 
   const currentBatch = experiences.slice(
     currentIndex * itemsPerView,
-    (currentIndex * itemsPerView) + itemsPerView
+    currentIndex * itemsPerView + itemsPerView,
   );
 
   // Hande edge case where last batch might have fewer items (though with 4 items and 2 per view it's exact)
@@ -209,10 +203,16 @@ const Experience = () => {
                 className="w-full grid grid-cols-1 md:grid-cols-2 gap-6"
               >
                 {currentBatch.map((exp) => (
-                  <div key={exp.id} className="glass-effect rounded-2xl p-8 border border-white/10 h-full flex flex-col">
+                  <div
+                    key={exp.id}
+                    className="glass-effect rounded-2xl p-8 border border-white/10 h-full flex flex-col"
+                  >
                     <div className="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-6">
                       <div>
-                        <h3 className="text-xl md:text-2xl font-bold text-white mb-2 line-clamp-1" title={exp.title}>
+                        <h3
+                          className="text-xl md:text-2xl font-bold text-white mb-2 line-clamp-1"
+                          title={exp.title}
+                        >
                           {exp.title}
                         </h3>
                         <div className="flex items-center text-primary-400 font-semibold text-sm flex-wrap gap-2">
@@ -249,15 +249,19 @@ const Experience = () => {
                           Key Achievements
                         </h4>
                         <ul className="space-y-1.5">
-                          {exp.achievements.slice(0, 3).map((achievement, i) => (
-                            <li
-                              key={i}
-                              className="flex items-start text-gray-400 text-xs"
-                            >
-                              <ChevronRightIcon className="w-3 h-3 text-primary-400 mr-1.5 mt-0.5 flex-shrink-0" />
-                              <span className="line-clamp-2">{achievement}</span>
-                            </li>
-                          ))}
+                          {exp.achievements
+                            .slice(0, 3)
+                            .map((achievement, i) => (
+                              <li
+                                key={i}
+                                className="flex items-start text-gray-400 text-xs"
+                              >
+                                <ChevronRightIcon className="w-3 h-3 text-primary-400 mr-1.5 mt-0.5 flex-shrink-0" />
+                                <span className="line-clamp-2">
+                                  {achievement}
+                                </span>
+                              </li>
+                            ))}
                         </ul>
                       </div>
 
@@ -293,10 +297,11 @@ const Experience = () => {
                   setDirection(index > currentIndex ? 1 : -1);
                   setCurrentIndex(index);
                 }}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentIndex
-                  ? "bg-primary-500 w-8"
-                  : "bg-white/20 hover:bg-white/40"
-                  }`}
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  index === currentIndex
+                    ? "bg-primary-500 w-8"
+                    : "bg-white/20 hover:bg-white/40"
+                }`}
               />
             ))}
           </div>
