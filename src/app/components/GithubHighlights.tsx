@@ -58,8 +58,12 @@ const GithubHighlights = () => {
         setLoading(true);
         const [userRes, eventsRes, reposRes] = await Promise.all([
           fetch("https://api.github.com/users/TanyaMushonga"),
-          fetch("https://api.github.com/users/TanyaMushonga/events/public?per_page=100"),
-          fetch("https://api.github.com/users/TanyaMushonga/repos?per_page=100&sort=stars"),
+          fetch(
+            "https://api.github.com/users/TanyaMushonga/events/public?per_page=100",
+          ),
+          fetch(
+            "https://api.github.com/users/TanyaMushonga/repos?per_page=100&sort=stars",
+          ),
         ]);
 
         if (!userRes.ok || !eventsRes.ok || !reposRes.ok) {
@@ -77,27 +81,27 @@ const GithubHighlights = () => {
         const currentYear = new Date().getFullYear();
         const thisYearStart = new Date(currentYear, 0, 1);
         const thisYearContributions = eventsData.filter(
-          (event) => new Date(event.created_at) >= thisYearStart
+          (event) => new Date(event.created_at) >= thisYearStart,
         ).length;
 
         // Find most starred repo
         const mostStarred = reposData.reduce(
           (max, repo) =>
             repo.stargazers_count > (max?.stargazers_count ?? 0) ? repo : max,
-          null as GithubRepo | null
+          null as GithubRepo | null,
         );
 
         // Find most forked repo (as proxy for most contributed)
         const mostForked = reposData.reduce(
           (max, repo) =>
             repo.forks_count > (max?.forks_count ?? 0) ? repo : max,
-          null as GithubRepo | null
+          null as GithubRepo | null,
         );
 
         // Calculate total stars
         const totalStars = reposData.reduce(
           (sum, repo) => sum + repo.stargazers_count,
-          0
+          0,
         );
 
         setStats({
@@ -119,10 +123,12 @@ const GithubHighlights = () => {
 
   const renderAction = (event: GithubEvent) => {
     const repoName = event.repo?.name ?? "repository";
-    const payload = event.payload as {
-      size?: number;
-      action?: string;
-    } | undefined;
+    const payload = event.payload as
+      | {
+          size?: number;
+          action?: string;
+        }
+      | undefined;
 
     if (event.type === "PushEvent") {
       const commitCount = payload?.size ?? 1;
@@ -210,7 +216,9 @@ const GithubHighlights = () => {
                       </p>
                     </div>
                     <div className="border-t border-white/10 pt-4">
-                      <p className="text-sm text-gray-400">This year contributions</p>
+                      <p className="text-sm text-gray-400">
+                        This year contributions
+                      </p>
                       <p className="text-2xl font-semibold text-primary-400">
                         {stats.contributionsThisYear}
                       </p>
@@ -220,7 +228,9 @@ const GithubHighlights = () => {
 
                 {stats.mostStarredRepo && (
                   <div className="rounded-3xl border border-white/10 bg-dark-950 p-6">
-                    <p className="text-sm text-gray-400 mb-2">Most starred repo</p>
+                    <p className="text-sm text-gray-400 mb-2">
+                      Most starred repo
+                    </p>
                     <a
                       href={stats.mostStarredRepo.html_url}
                       target="_blank"
@@ -239,7 +249,9 @@ const GithubHighlights = () => {
 
                 {stats.mostContributedRepo && (
                   <div className="rounded-3xl border border-white/10 bg-dark-950 p-6">
-                    <p className="text-sm text-gray-400 mb-2">Most forked repo</p>
+                    <p className="text-sm text-gray-400 mb-2">
+                      Most forked repo
+                    </p>
                     <a
                       href={stats.mostContributedRepo.html_url}
                       target="_blank"
