@@ -5,7 +5,21 @@ import { BookOpen, FileText, FlaskConical } from "lucide-react";
 import Link from "next/link";
 export const researchPapers = [
   {
-    title: "Intelligent Aerial Traffic Observation System with Real-Time Speed Detection and Automated Citation Generation",
+    title:
+      "An AI-Driven Predictive Navigation System for Dynamic Congestion Avoidance and Urban Idling Reduction",
+    authors: "Tanyaradzwa Tanatswa Mushonga and Samkeliso Suku Dube",
+    institution:
+      "National University of Science and Technology, Bulawayo, Zimbabwe",
+    abstract:
+      "This poster paper presents an AI-driven predictive navigation framework designed to reduce urban idling through proactive congestion forecasting and dynamic routing. The system integrates mobile GPS data, historical traffic patterns, and machine learning models such as Long Short-Term Memory (LSTM) networks to predict congestion and recommend optimal routes.",
+    status: "Poster Paper",
+    journal: "National University of Science and Technology",
+    date: "2026",
+    link: "https://docs.google.com/document/d/1YA2chlHxNGxlkp933XJXW6bon9RJWfRQuIvq-N87Vaw/edit?usp=sharing",
+  },
+  {
+    title:
+      "Intelligent Aerial Traffic Observation System with Real-Time Speed Detection and Automated Citation Generation",
     abstract:
       "A dissertation project proposing an autonomous drone-based system for traffic enforcement. The study leverages computer vision algorithms to detect vehicle speed in real-time and automate citation generation, aiming to enhance road safety monitoring efficiency.",
     status: "In Review (Poster Submission)",
@@ -14,7 +28,8 @@ export const researchPapers = [
     link: "https://1drv.ms/w/c/60ca998cf444f795/IQBvbEVQFyrRTLYHs-MlP805AXvRknGSUdybnz7PKOnyKTk",
   },
   {
-    title: "Securing Mobile Banking in Zimbabwe through Biometric Authentication: A Practical Framework",
+    title:
+      "Securing Mobile Banking in Zimbabwe through Biometric Authentication: A Practical Framework",
     abstract:
       "An integrative review developing a robust security framework for the Zimbabwean fintech sector. The paper analyzes current vulnerabilities and proposes a practical implementation of biometric multi-factor authentication to mitigate mobile banking fraud.",
     status: "In Review (Full Paper Submission)",
