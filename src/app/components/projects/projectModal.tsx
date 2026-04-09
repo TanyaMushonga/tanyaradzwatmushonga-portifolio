@@ -223,7 +223,7 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
                                   <span className="inline-block w-1.5 h-1.5 rounded-full bg-yellow-400 mt-2 mr-2 flex-shrink-0"></span>
                                   <span>{improvement}</span>
                                 </li>
-                              )
+                              ),
                             )}
                           </ul>
                         </div>
@@ -263,7 +263,11 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
                       <motion.div
                         initial={{ x: 0 }}
                         animate={{ x: [0, -8, 0] }}
-                        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+                        transition={{
+                          duration: 10,
+                          repeat: Infinity,
+                          ease: "easeInOut",
+                        }}
                         className="inline-flex gap-2 min-w-max"
                       >
                         {project.techStack.map((tech, index) => {
@@ -331,8 +335,8 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
                               tag.color === "blue-text-gradient"
                                 ? "bg-blue-500/20 text-blue-400"
                                 : tag.color === "green-text-gradient"
-                                ? "bg-green-500/20 text-green-400"
-                                : "bg-pink-500/20 text-pink-400"
+                                  ? "bg-green-500/20 text-green-400"
+                                  : "bg-pink-500/20 text-pink-400"
                             }`}
                           >
                             {tag.name}
