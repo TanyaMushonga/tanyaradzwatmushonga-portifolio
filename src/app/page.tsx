@@ -10,7 +10,7 @@ import About from "./components/about";
 import Awards from "./components/awards/awards";
 import Gallery from "./components/Gallery";
 import Writing from "./components/writing";
-import GithubHighlights from "./components/GithubHighlights";
+
 
 export default function Home() {
   return (
@@ -19,7 +19,6 @@ export default function Home() {
       <About />
       <Projects />
       <Writing />
-      <GithubHighlights />
       <Skills />
       <Experience />
       <Research />
