@@ -25,12 +25,11 @@ const About = () => {
 
             <div className="space-y-6 text-gray-300 text-lg leading-relaxed">
               <p>
-                I&apos;m a specialized
-                <span className="text-primary-400 font-semibold">
-                  {" "}
-                  Frontend & Mobile Engineer {" "}
-                </span>
-                from Harare, Zimbabwe. While I specialize in crafting beautiful interfaces, my background in Django, Node.js, and DevOps allows me to architect frontends that consume APIs efficiently and deploy seamlessly.
+                I build production systems end-to-end — from React Native mobile
+                apps and Next.js frontends, through Django REST and Express APIs,
+                to AWS and OCI cloud infrastructure. My focus is on creating
+                systems that deliver business value, not just polished user
+                interfaces.
               </p>
 
               <p>
@@ -53,7 +52,7 @@ const About = () => {
               </div>
               <div className="flex items-center text-gray-400">
                 <UserIcon className="w-5 h-5 mr-2 text-accent-400" />
-                <span>Frontend & Mobile Engineer</span>
+                <span>Full-Stack Cloud Engineer</span>
               </div>
             </div>
           </motion.div>
