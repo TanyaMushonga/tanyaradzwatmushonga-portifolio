@@ -1,17 +1,22 @@
 "use client";
 import { motion } from "framer-motion";
-import { ArrowTopRightOnSquareIcon, DocumentTextIcon } from "@heroicons/react/24/outline";
+import {
+  ArrowTopRightOnSquareIcon,
+  DocumentTextIcon,
+} from "@heroicons/react/24/outline";
 
 const articles = [
   {
-    title: "AWS Cloud Engineering Series — 110 Modules of Real-World Infrastructure",
+    title:
+      "AWS Cloud Engineering Series — 110 Modules of Real-World Infrastructure",
     description:
       "A complete learning path covering CI/CD, monitoring, resilient APIs, and cloud networking for production-grade systems.",
     link: "https://blog.tanyaradzwatmushonga.me/",
     tag: "Cloud Engineering",
   },
   {
-    title: "Designing Scalable Django REST APIs for High-Traffic Mobile Platforms",
+    title:
+      "Designing Scalable Django REST APIs for High-Traffic Mobile Platforms",
     description:
       "Practical patterns for API design, authentication, caching, and reliability in mobile-first ecosystems.",
     link: "https://blog.tanyaradzwatmushonga.me/",
@@ -67,7 +72,9 @@ const Writing = () => {
               <h3 className="text-2xl font-semibold text-white mb-4">
                 {article.title}
               </h3>
-              <p className="text-gray-300 mb-6 leading-relaxed">{article.description}</p>
+              <p className="text-gray-300 mb-6 leading-relaxed">
+                {article.description}
+              </p>
               <div className="flex items-center gap-2 text-primary-300 font-medium">
                 <span>Read on the blog</span>
                 <ArrowTopRightOnSquareIcon className="w-4 h-4" />
