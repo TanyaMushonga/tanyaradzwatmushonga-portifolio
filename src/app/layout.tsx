@@ -6,30 +6,34 @@ import { Analytics } from "@vercel/analytics/next";
 export const metadata = {
   metadataBase: new URL("https://tanyaradzwatmushonga.me"),
   title: {
-    default: "Tanyaradzwa T Mushonga - Frontend Engineer | Mobile Specialist",
-    template: "%s | Tanyaradzwa Mushonga"
+    default: "Tanyaradzwa T Mushonga - Software Engineer | Full-Stack & Cloud Specialist",
+    template: "%s | Tanyaradzwa T Mushonga"
   },
   description:
-    "Portfolio of Tanyaradzwa Mushonga, a Frontend Engineer and Mobile Specialist building pixel-perfect web experiences with Next.js and React Native.",
+    "Portfolio of Tanyaradzwa Mushonga, a Software Engineer specializing in Full-Stack development, Cloud infrastructure, and Mobile applications. Building scalable digital solutions with Next.js, React Native, and AWS.",
   alternates: {
     canonical: "/",
   },
   keywords: [
-    "frontend engineer",
+    "software engineer",
+    "full-stack engineer",
+    "cloud specialist",
     "mobile specialist",
     "react native developer",
     "next.js expert",
     "typescript",
-    "web development",
-    "zimbabwe",
-    "software engineer"
+    "backend developer",
+    "aws specialist",
+    "django developer",
+    "software architect",
+    "zimbabwe developer",
   ],
   authors: [{ name: "Tanyaradzwa T Mushonga", url: "https://tanyaradzwatmushonga.me" }],
   creator: "Tanyaradzwa T Mushonga",
   openGraph: {
-    title: "Tanyaradzwa T Mushonga - Frontend Engineer | Mobile Specialist",
+    title: "Tanyaradzwa T Mushonga - Software Engineer | Full-Stack & Cloud Specialist",
     description:
-      "Tanyaradzwa Mushonga is a specialized Frontend Engineer and Mobile App Developer building high-performance, pixel-perfect digital experiences.",
+      "Tanyaradzwa Mushonga is a multi-disciplinary Software Engineer building high-performance, scalable digital experiences across web, mobile, and cloud.",
     type: "website",
     url: "https://tanyaradzwatmushonga.me",
     siteName: "Tanyaradzwa Mushonga Portfolio",
@@ -37,9 +41,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Tanyaradzwa T Mushonga - Frontend Engineer | Mobile Specialist",
+    title: "Tanyaradzwa T Mushonga - Software Engineer | Full-Stack & Cloud Specialist",
     description:
-      "Specialized Frontend Engineer and Mobile App Developer. View my portfolio.",
+      "Software Engineer specializing in Full-Stack, Cloud, and Mobile development. View my portfolio.",
     creator: "@tanyaradzwa_tm",
   },
   robots: {
