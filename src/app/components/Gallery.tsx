@@ -10,7 +10,7 @@ const galleryItems = [
     title: "SECZim Codefest Runner Up",
     category: "Hackathon",
     description:
-      "Secured a $5,000 prize at the SECZim Codefest for Developing a Prudential Risk-Based Supervision System.",
+      "Secured a $5,000 prize at the SECZim Codefest for developing a prudential risk-based supervision system.",
     src: "/gallery/seczim.jpeg",
     className: "md:col-span-2 md:row-span-2",
   },
@@ -19,7 +19,7 @@ const galleryItems = [
     title: "POTRAZ Innovation Recognition",
     category: "Award",
     description:
-      "Awarded to IDSphere for transformative innovation in FinTech and promoting inclusive finance at the 2025 Innovation Expo.",
+      "Recognized for FinTech innovation with IDSphere at the 2025 Innovation Expo, highlighting inclusive finance solutions.",
     src: "/gallery/potraz_innovation_expo_cert.jpeg",
     className: "md:col-span-1 md:row-span-1",
   },
@@ -28,7 +28,7 @@ const galleryItems = [
     title: "Best Innovator Trophy",
     category: "Achievement",
     description:
-      "Representing NUST with the top honors for eco-friendly industrial innovation.",
+      "Represented NUST and won top honors for an eco-friendly industrial innovation project.",
     src: "/gallery/best_innovator.jpeg",
     className: "md:col-span-1 md:row-span-2",
   },
@@ -37,7 +37,7 @@ const galleryItems = [
     title: "Pitching at UNDP Accelerator Lab",
     category: "Presentation",
     description:
-      "Presenting the Virtual Queuing solution during the ZB Bank Innovators Pitch Competition.",
+      "Presented the Virtual Queuing product in the ZB Bank Innovators Pitch Competition to investors and partners.",
     src: "/gallery/zb_bank_innovators_pitch_competion.jpeg",
     className: "md:col-span-1 md:row-span-1",
   },
@@ -46,7 +46,7 @@ const galleryItems = [
     title: "International Labour Organization Certification",
     category: "Professional Development",
     description:
-      "Completed the 'Start Your Business' (SYB) training program facilitated by Fine Touch Development Trust.",
+      "Completed the 'Start Your Business' training program, validating my ability to build and scale tech-enabled services.",
     src: "/gallery/siyb_cert.jpeg",
     className: "md:col-span-2 md:row-span-1",
   },
@@ -55,7 +55,7 @@ const galleryItems = [
     title: "Econet E-novate Expo",
     category: "Exhibition",
     description:
-      "Showcasing NUST computer science innovations at the Econet E-novate technology hub.",
+      "Showcased NUST computer science innovations and engineering solutions at the Econet E-novate technology hub.",
     src: "/gallery/econet-eenovate.jpeg",
     className: "md:col-span-1 md:row-span-1",
   },
@@ -64,7 +64,7 @@ const galleryItems = [
     title: "National Cyber Security Conference",
     category: "Conference",
     description:
-      "Networking and presenting at the 2025 National Cyber Security Conference & Expo.",
+      "Presented and networked at the 2025 National Cyber Security Conference & Expo to deepen my security and cloud engineering practice.",
     src: "/gallery/national_cyber_security.jpeg",
     className: "md:col-span-1 md:row-span-1",
   },
@@ -73,7 +73,7 @@ const galleryItems = [
     title: "Mine Entra Exhibition",
     category: "Exhibition",
     description:
-      "Collaborating with POTRAZ at Mine Entra to discuss the future of ICTs in sustainable mining.",
+      "Collaborated with POTRAZ at Mine Entra to explore ICT innovation for sustainable mining and industrial digital transformation.",
     src: "/gallery/mine_entra_potraz.jpeg",
     className: "md:col-span-2 md:row-span-1",
   },
@@ -97,8 +97,8 @@ const Gallery = () => {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="text-dark-400 max-w-2xl mx-auto"
         >
-          A visual journey through my professional life, exhibitions, and
-          recognition.
+          A visual journey through awards, product launches, cloud engineering
+          milestones, and writing achievements.
         </motion.p>
       </div>
 
