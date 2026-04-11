@@ -38,4 +38,5 @@ export interface Project {
   lessonsLearned?: string[];
   tags: ProjectTag[];
   futureImprovements?: string[];
+  gistUrl?: string;
 }
