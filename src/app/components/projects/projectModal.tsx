@@ -370,6 +370,18 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
                         View Source Code
                       </motion.button>
                     )}
+
+                    {project.gistUrl && (
+                      <motion.button
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                        className="w-full border border-accent-400/30 px-6 py-3 rounded-lg text-accent-400 font-semibold flex items-center justify-center hover:bg-accent-400/10 transition-colors"
+                        onClick={() => window.open(project.gistUrl, "_blank")}
+                      >
+                        <DocumentTextIcon className="w-5 h-5 mr-2" />
+                        Technical Reference
+                      </motion.button>
+                    )}
                   </div>
                 </div>
               </div>
