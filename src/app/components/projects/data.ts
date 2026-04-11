@@ -781,8 +781,8 @@ export const projects = [
     liveUrl: "https://github.com/TanyaMushonga/skymarshal-api",
     githubUrl: "https://github.com/TanyaMushonga/skymarshal-api",
     techStack: [
-      "Django REST Framework",
-      "Python",
+      "Node.js",
+      "TypeScript",
       "YOLOv8",
       "WebSockets",
       "PostGIS",
@@ -849,21 +849,290 @@ export const projects = [
       "Implement traffic flow analytics",
       "Add alert notification system",
     ],
+    gistUrl: "https://gist.github.com/TanyaMushonga/8791c3a9399597e9bde615d2e4fecbb8",
     tags: [
       {
-        name: "django-rest-framework",
+        name: "node.js",
         color: "green-text-gradient",
         icon: "server",
       },
       {
-        name: "yolo",
-        color: "orange-text-gradient",
-        icon: "cpu",
+        name: "typescript",
+        color: "blue-text-gradient",
+        icon: "code",
       },
       {
         name: "postgresql",
         color: "pink-text-gradient",
         icon: "database",
+      },
+    ],
+  },
+  {
+    id: 10,
+    title: "SkyMarshal Mobile",
+    description:
+      "Field monitoring and tactical control application providing real-time surveillance feeds and drone fleet management for operators on the move.",
+    image: "/project-placeholder.svg",
+    category: "Mobile Application",
+    liveUrl: "https://github.com/TanyaMushonga/skymarshal-mobile",
+    githubUrl: "https://github.com/TanyaMushonga/skymarshal-mobile",
+    gistUrl: "https://gist.github.com/TanyaMushonga/8791c3a9399597e9bde615d2e4fecbb8",
+    techStack: [
+      "React Native",
+      "Expo",
+      "TypeScript",
+      "NativeWind",
+      "WebSockets",
+      "Reanimated",
+    ],
+    status: "Open Source",
+    teamSize: "Solo Project",
+    developmentPeriod: "2024-2025",
+    metrics: {
+      latency: "Sub-200ms frame delivery",
+      platforms: "iOS & Android",
+      streaming: "Real-time annotated video",
+    },
+    keyFeatures: [
+      "Live annotated video streaming via WebSockets",
+      "Remote drone activation and configuration",
+      "GPS-tagged frame visualization",
+      "Low-latency tactical overlays",
+      "Cross-platform consistency with web dashboard",
+    ],
+    implementation: [
+      {
+        title: "Real-time Video Rendering",
+        description:
+          "Implemented a high-performance canvas-based rendering engine to display Base64-encoded JPEG frames with real-time detection overlays.",
+        technologies: ["React Native", "WebSockets", "Canvas"],
+        achievements: [
+          "Achieved stable 15+ FPS on mobile devices",
+          "Implemented smooth coordinate interpolation for bounding boxes",
+        ],
+      },
+    ],
+    architecture:
+      "React Native / Expo client connecting to SkyMarshal API via REST and Frame Broadcast Service via WebSockets.",
+    challenges: [
+      {
+        description: "Handling high-frequency WebSocket message bursts",
+        solution: "Implemented a frame buffer and prioritized rendering loop",
+        impact: "Eliminated UI jitter and reduced battery consumption",
+      },
+    ],
+    tags: [
+      {
+        name: "react-native",
+        color: "blue-text-gradient",
+        icon: "mobile-alt",
+      },
+      {
+        name: "websockets",
+        color: "pink-text-gradient",
+        icon: "broadcast-tower",
+      },
+    ],
+  },
+  {
+    id: 11,
+    title: "SkyMarshal Admin Dashboard",
+    description:
+      "A centralized web command center for real-time tactical monitoring, historical patrol analysis, and global drone fleet orchestration.",
+    image: "/project-placeholder.svg",
+    category: "Web Application",
+    liveUrl: "https://github.com/TanyaMushonga/skymarshal-admin-dashboard",
+    githubUrl: "https://github.com/TanyaMushonga/skymarshal-admin-dashboard",
+    gistUrl: "https://gist.github.com/TanyaMushonga/8791c3a9399597e9bde615d2e4fecbb8",
+    techStack: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "WebSockets",
+      "Framer Motion",
+    ],
+    status: "Open Source",
+    teamSize: "Solo Project",
+    developmentPeriod: "2024-2025",
+    metrics: {
+      performance: "95+ Lighthouse score",
+      concurrency: "Supports multi-operator sync",
+      ux: "Real-time state synchronization",
+    },
+    keyFeatures: [
+      "Multi-view surveillance grid",
+      "Interactive GPS heatmaps and patrol logs",
+      "Fleet-wide configuration management",
+      "Role-based access control for operators",
+      "SSR for fast initial tactical load",
+    ],
+    implementation: [
+      {
+        title: "Tactical Monitoring Interface",
+        description:
+          "Developed a complex monitoring interface using Next.js App Router and WebSockets for real-time state updates and video feeds.",
+        technologies: ["Next.js", "TypeScript", "WebSockets"],
+        achievements: [
+          "Integrated real-time detection alerts",
+          "Built interactive patrol timeline for event review",
+        ],
+      },
+    ],
+    architecture:
+      "Next.js frontend using the BFF (Backend-for-Frontend) pattern, communicating with SkyMarshal API and Kafka-backed frame services.",
+    challenges: [
+      {
+        description: "Managing complex real-time state across views",
+        solution: "Used optimistic UI updates and shared WebSocket hooks",
+        impact: "Provided a seamless, zero-latency feel for operators",
+      },
+    ],
+    tags: [
+      {
+        name: "next.js",
+        color: "blue-text-gradient",
+        icon: "react",
+      },
+      {
+        name: "tailwind",
+        color: "pink-text-gradient",
+        icon: "paint-brush",
+      },
+    ],
+  },
+  {
+    id: 12,
+    title: "IATOS Ingest Gateway",
+    description:
+      "A specialized high-throughput ingestion service designed to handle raw video frame bursts from distributed edge nodes and route them into an event-driven pipeline.",
+    image: "/project-placeholder.svg",
+    category: "Backend Service",
+    liveUrl: "https://github.com/TanyaMushonga/iatos-camera",
+    githubUrl: "https://github.com/TanyaMushonga/iatos-camera",
+    gistUrl: "https://gist.github.com/TanyaMushonga/8791c3a9399597e9bde615d2e4fecbb8",
+    techStack: [
+      "Node.js",
+      "TypeScript",
+      "Apache Kafka",
+      "Express.js",
+      "MongoDB",
+      "Docker",
+    ],
+    status: "Open Source",
+    teamSize: "Solo Project",
+    developmentPeriod: "2024-2025",
+    metrics: {
+      throughput: "100+ frames/sec ingestion",
+      latency: "Sub-10ms processing time",
+      durability: "Kafka-backed buffering",
+    },
+    keyFeatures: [
+      "Stateless HTTP ingest for firewall resilience",
+      "Payload validation and routing to Kafka",
+      "Asynchronous metadata persistence to MongoDB",
+      "Horizontally scalable containerized design",
+      "Strict separation of ingest from processing logic",
+    ],
+    implementation: [
+      {
+        title: "High-Throughput Ingest",
+        description:
+          "Built a non-blocking ingestion layer using Node.js and Kafka to decouple edge nodes from downstream computer vision workers.",
+        technologies: ["Node.js", "Kafka", "Express"],
+        achievements: [
+          "Eliminated frame drops during network bursts",
+          "Simplified edge node logic with stateless POST requests",
+        ],
+      },
+    ],
+    architecture:
+      "Event-driven microservice acting as the entry point for the Kafka-based surveillance pipeline.",
+    challenges: [
+      {
+        description: "Decoupling slow DB writes from fast ingest",
+        solution: "Used Kafka as a buffer and moved persistence to async workers",
+        impact: "Increased system throughput by 4x",
+      },
+    ],
+    tags: [
+      {
+        name: "kafka",
+        color: "orange-text-gradient",
+        icon: "stream",
+      },
+      {
+        name: "mongodb",
+        color: "green-text-gradient",
+        icon: "database",
+      },
+    ],
+  },
+  {
+    id: 13,
+    title: "Sky Marshal Firmware",
+    description:
+      "Low-level C++ firmware for ESP32-CAM nodes, featuring an intelligent state machine for autonomous polling, frame capture, and secure telemetry uplink.",
+    image: "/project-placeholder.svg",
+    category: "Embedded Systems",
+    liveUrl: "https://github.com/TanyaMushonga/sky_marshal_firmware",
+    githubUrl: "https://github.com/TanyaMushonga/sky_marshal_firmware",
+    gistUrl: "https://gist.github.com/TanyaMushonga/8791c3a9399597e9bde615d2e4fecbb8",
+    techStack: [
+      "C++",
+      "Arduino",
+      "ESP32",
+      "Embedded Systems",
+      "HTTP",
+      "PlatformIO",
+    ],
+    status: "Open Source",
+    teamSize: "Collaboration with Malwande Moyo",
+    developmentPeriod: "2024-2025",
+    metrics: {
+      reliability: "99.9% uptime on hardware nodes",
+      hardware: "ESP32-CAM AI Thinker",
+      efficiency: "Optimized JPEG encoding",
+    },
+    keyFeatures: [
+      "Deterministic state machine (Idle, Polling, Streaming)",
+      "Base64-encoded frame transmission via HTTP POST",
+      "Autonomous Wi-Fi recovery and re-polling",
+      "Dynamic configuration updates via API polling",
+      "Low-cost, scalable edge deployment",
+    ],
+    implementation: [
+      {
+        title: "Edge State Machine",
+        description:
+          "Developed a robust state machine to manage camera initialization, Wi-Fi connectivity, and streaming transitions.",
+        technologies: ["C++", "ESP32", "Arduino"],
+        achievements: [
+          "Implemented fail-safe re-entry for all states",
+          "Optimized memory usage for sustained streaming",
+        ],
+      },
+    ],
+    architecture:
+      "Stateless polling-based firmware running on ESP32-CAM hardware nodes.",
+    challenges: [
+      {
+        description: "Managing limited memory during Base64 encoding",
+        solution: "Implemented efficient buffer management and chunking",
+        impact: "Prevented stack overflows during high-resolution capture",
+      },
+    ],
+    tags: [
+      {
+        name: "cpp",
+        color: "blue-text-gradient",
+        icon: "code",
+      },
+      {
+        name: "esp32",
+        color: "orange-text-gradient",
+        icon: "microchip",
       },
     ],
   },
