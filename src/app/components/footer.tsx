@@ -60,7 +60,7 @@ const Footer = () => {
                     <h3 className="text-2xl font-bold gradient-text">
                       Tanyaradzwa T Mushonga
                     </h3>
-                    <p className="text-gray-400">Software Engineer</p>
+                    <p className="text-gray-400">Principal Fullstack Engineer & Cloud Expert</p>
                   </div>
                 </div>
 

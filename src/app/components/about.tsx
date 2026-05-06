@@ -25,7 +25,7 @@ const About = () => {
 
             <div className="space-y-6 text-gray-300 text-lg leading-relaxed">
               <p>
-                I am a Principal Fullstack Software Engineer & Cloud Expert with a &quot;T-shaped&quot; skillset. This means I have broad knowledge across the entire software development lifecycle—from React Native mobile apps and Next.js frontends to UI/UX design—anchored by deep, specialized expertise in backend architecture, Django REST, and scalable AWS cloud infrastructure.
+                I am a Principal Fullstack Software Engineer & Cloud Expert with a &quot;T-shaped&quot; skillset. This means I have broad knowledge across the entire software development lifecycle, from React Native mobile apps and Next.js frontends to UI/UX design, anchored by deep, specialized expertise in backend architecture, Django REST, and scalable AWS cloud infrastructure.
               </p>
 
               <p>
