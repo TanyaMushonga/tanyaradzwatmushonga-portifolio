@@ -6,6 +6,19 @@ import Link from "next/link";
 export const researchPapers = [
   {
     title:
+      "Enhancing Road Safety Infrastructure: An Intelligent Aerial Traffic Observation and Automated Citation System",
+    authors: "Tanyaradzwa Tanatswa Mushonga and Samkeliso Suku Dube",
+    institution:
+      "National University of Science and Technology, Bulawayo, Zimbabwe",
+    abstract:
+      "The study introduces the Intelligent Aerial Traffic Observation System (IATOS), a solution utilizing Unmanned Aerial Vehicles (UAVs) and computer vision to automate speed enforcement. The system employs an edge-cloud hybrid architecture with YOLOv8 and a homography technique to project 2D aerial video onto the road plane, calculating speed with high precision and generating digital evidence packs.",
+    status: "Published",
+    journal: "7th African International Conference on IEOM",
+    date: "2026",
+    link: "https://docs.google.com/document/d/1JW9WqsOmaVvJnZ4wbtKy1DrfKX-CGZ75VHCUKBlwJ9E/edit?usp=sharing",
+  },
+  {
+    title:
       "An AI-Driven Predictive Navigation System for Dynamic Congestion Avoidance and Urban Idling Reduction",
     authors: "Tanyaradzwa Tanatswa Mushonga and Samkeliso Suku Dube",
     institution:
