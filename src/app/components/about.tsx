@@ -25,27 +25,15 @@ const About = () => {
 
             <div className="space-y-6 text-gray-300 text-lg leading-relaxed">
               <p>
-                I build production systems end-to-end — from React Native mobile
-                apps and Next.js frontends, through Django REST and Express
-                APIs, to AWS and OCI cloud infrastructure. My focus is on
-                creating systems that deliver business value, not just polished
-                user interfaces.
+                I am a Principal Fullstack Software Engineer & Cloud Expert with a &quot;T-shaped&quot; skillset. This means I have broad knowledge across the entire software development lifecycle—from React Native mobile apps and Next.js frontends to UI/UX design—anchored by deep, specialized expertise in backend architecture, Django REST, and scalable AWS cloud infrastructure.
               </p>
 
               <p>
-                I bridge the gap between design and engineering, ensuring that
-                pixel-perfect UIs are backed by robust, scalable architecture.
-                My &quot;T-shaped&quot; skillset means I can dive deep into
-                React Native performance while understanding the backend
-                implications of every frontend decision.
+                I bridge the gap between design and robust engineering, ensuring that pixel-perfect user interfaces are backed by highly resilient and scalable cloud architectures. My comprehensive approach allows me to design and implement systems that deliver substantial business value from end to end.
               </p>
 
               <p>
-                When I&apos;m not coding, you&apos;ll find me contributing to
-                open-source projects, mentoring fellow developers, or exploring
-                the latest in tech innovation. I&apos;m always excited to
-                collaborate on projects that challenge me and create positive
-                impact.
+                Whether I am optimizing cloud deployments, mentoring engineering teams, or leading the development of complex platforms, I leverage my T-shaped background to foster cross-functional collaboration and drive technical excellence. When I am not architecting systems, you will find me exploring new cloud innovations or contributing to the tech community.
               </p>
             </div>
 
@@ -56,7 +44,7 @@ const About = () => {
               </div>
               <div className="flex items-center text-gray-400">
                 <UserIcon className="w-5 h-5 mr-2 text-accent-400" />
-                <span>Full-Stack Cloud Engineer</span>
+                <span>Principal Fullstack Engineer & Cloud Expert</span>
               </div>
             </div>
           </motion.div>
