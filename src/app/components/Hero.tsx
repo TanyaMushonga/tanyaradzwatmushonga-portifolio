@@ -181,7 +181,7 @@ const Hero = () => {
           className="flex flex-wrap justify-center gap-3 mb-16"
         >
           <span className="px-4 py-2 rounded-full bg-white/10 text-sm text-gray-200 border border-white/10">
-            Open to: Principal Fullstack · Cloud Architecture · Remote/Hybrid
+            Open to: Software Engineer/Developer roles · Cloud Architecture · Remote/Hybrid/Onsite
           </span>
         </motion.div>
 
