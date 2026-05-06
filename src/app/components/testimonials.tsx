@@ -56,20 +56,19 @@ const Testimonials = () => {
     },
     {
       id: 2,
-      name: "Wyne Chitambara",
-      position: "DevOps Engineer",
-      company: "Mviyo technologies",
+      name: "Dr. SS Dube",
+      position: "Senior Lecturer & Academic Supervisor",
+      company: "National University of Science and Technology",
 
       testimonial:
-        "I mentored Tanya and l was impressed by his ability to learn DevOps principles focusing on AWS and he quickly apply them to solve real-world problems.",
+        "I have had the pleasure of supervising Tanyaradzwa on a number of research projects at NUST. He consistently demonstrates a strong grasp of complex technical concepts and an impressive ability to apply them practically. He is a dedicated and highly capable researcher.",
       rating: 5,
-      project: "Safi Platform",
+      project: "Academic Research Projects",
       contact: {
-        email: "wyne.chitamba@mviyo.com",
-        linkedin: "https://www.linkedin.com/in/wyne-c-b16b54114/",
+        email: "samkeliso.dube@nust.ac.zw",
       },
-      workRelation: "Colleague",
-      date: "April 2024",
+      workRelation: "Mentor",
+      date: "2026",
     },
     {
       id: 3,
