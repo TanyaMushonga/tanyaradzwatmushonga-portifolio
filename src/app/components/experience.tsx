@@ -16,10 +16,10 @@ const experiences = [
     company: "Lanitech360",
     location: "Remote",
     type: "Contract",
-    duration: "Dec 2025 - Present",
-    current: true,
+    duration: "Dec 2025 - April 2026",
+    current: false,
     description:
-      "Lead frontend and cloud engineer responsible for building business suite applications, integrating APIs, and supporting deployment pipelines for scalable production delivery.",
+      "Frontend and cloud engineer responsible for building business suite applications, integrating APIs, and supporting deployment pipelines for scalable production delivery.",
     achievements: [
       "Architected and implemented frontend systems with API-first design.",
       "Built scalable data flows between Next.js interfaces and backend services.",
