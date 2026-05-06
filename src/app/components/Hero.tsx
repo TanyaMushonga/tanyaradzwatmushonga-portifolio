@@ -8,12 +8,11 @@ import {
 import { useEffect, useState } from "react";
 
 const roles = [
-  "Full-Stack & Cloud Engineer",
-  "End-to-End Platform Builder",
-  "Django REST & AWS Architect",
-  "Software Engineer",
+  "Principal Fullstack Software Engineer",
+  "Cloud Expert",
+  "End-to-End Platform Architect",
   "React Native · Next.js · Node.js",
-  "Cloud Infrastructure Specialist",
+  "AWS Cloud Infrastructure Specialist",
 ];
 
 const Hero = () => {
@@ -136,9 +135,7 @@ const Hero = () => {
           variants={itemVariants}
           className="text-xl md:text-2xl text-gray-400 max-w-4xl mx-auto mb-12 leading-relaxed"
         >
-          I build production systems end-to-end — from React Native mobile apps
-          and Next.js frontends to Django REST APIs, PostgreSQL data stores, and
-          AWS cloud infrastructure.
+          As a T-shaped Principal Fullstack Software Engineer & Cloud Expert, I combine deep expertise in cloud architecture and backend systems with broad capabilities across frontend and mobile development to build resilient, end-to-end production platforms.
         </motion.p>
 
         <motion.div
@@ -184,7 +181,7 @@ const Hero = () => {
           className="flex flex-wrap justify-center gap-3 mb-16"
         >
           <span className="px-4 py-2 rounded-full bg-white/10 text-sm text-gray-200 border border-white/10">
-            Open to: Full-Stack · Cloud · Mobile · Remote/Hybrid
+            Open to: Principal Fullstack · Cloud Architecture · Remote/Hybrid
           </span>
         </motion.div>
 
