@@ -1,41 +1,9 @@
 // File: app/components/Awards.js
 "use client";
 import { motion } from "framer-motion";
-import {
-  TrophyIcon,
-  StarIcon,
-  AcademicCapIcon,
-  RocketLaunchIcon,
-  ShieldCheckIcon,
-  SparklesIcon,
-} from "@heroicons/react/24/outline";
 import { awards } from "./data";
 
 const Awards = () => {
-  interface IconMap {
-    competition: typeof TrophyIcon;
-    recognition: typeof StarIcon;
-    academic: typeof AcademicCapIcon;
-    innovation: typeof RocketLaunchIcon;
-    certification: typeof ShieldCheckIcon;
-    achievement: typeof SparklesIcon;
-  }
-
-  type AwardType = keyof IconMap;
-
-  const getIcon = (
-    type: AwardType
-  ): React.ComponentType<React.SVGProps<SVGSVGElement>> => {
-    const icons: IconMap = {
-      competition: TrophyIcon,
-      recognition: StarIcon,
-      academic: AcademicCapIcon,
-      innovation: RocketLaunchIcon,
-      certification: ShieldCheckIcon,
-      achievement: SparklesIcon,
-    };
-    return icons[type] || TrophyIcon;
-  };
 
   return (
     <section id="awards" className="py-20 relative overflow-hidden">
@@ -57,7 +25,6 @@ const Awards = () => {
         </motion.div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {awards.map((award, index) => {
-            const IconComponent = getIcon(award.type as AwardType);
             return (
               <motion.div
                 key={award.id}
@@ -68,15 +35,8 @@ const Awards = () => {
                 whileHover={{ y: -10, scale: 1.02 }}
                 className="glass-effect rounded-2xl p-6 border border-white/10 group hover:border-white/20 transition-all duration-300"
               >
-                {/* Award Icon & Rank */}
-                <div className="flex items-center justify-between mb-4">
-                  <div
-                    className={`p-3 rounded-xl bg-gradient-to-r from-primary-400 to-primary-600 bg-opacity-20`}
-                  >
-                    <IconComponent
-                      className={`w-8 h-8 bg-gradient-to-r from-primary-400 to-primary-600 bg-clip-text text-transparent`}
-                    />
-                  </div>
+                {/* Award Rank */}
+                <div className="flex items-center justify-end mb-4">
                   {award.rank && (
                     <div
                       className={`px-3 py-1 rounded-full bg-gradient-to-r from-primary-400 to-primary-600 text-white text-sm font-semibold`}

@@ -21,4 +21,24 @@ export const awards = [
       "Recognised for my contribution to the FinTech industry by showcasing a revolutionary concept that allows individuals to have a digital identity that is secure, private and portable",
     date: "July 2025",
   },
+  {
+    id: 3,
+    title: "SECZim Codefest 2026",
+    organization: "Securities and Exchange Commission of Zimbabwe (SECZim)",
+    type: "Hackathon",
+    rank: "Runner Up",
+    description:
+      "Secured a $5,000 prize at the SECZim Codefest for developing a prudential risk-based supervision system.",
+    date: "2026",
+  },
+ 
+  {
+    id: 5,
+    title: "Best Paper Award",
+    organization: "IEOM Conference Cape Town",
+    type: "Award",
+    description:
+      "Received the Best Paper Award at the IEOM Conference in Cape Town.",
+    date: "Recent",
+  },
 ];
